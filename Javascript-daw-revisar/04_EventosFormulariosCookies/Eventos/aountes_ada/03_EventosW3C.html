@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Eventos. Modelo de registro de eventos avanzados del W3C</title>
+        <!--     
+            EVENTO:
+            Mecanismo que se acciona cuando el usuario realiza un cambio sobre la página web.
+            Capturar un evento es programar una acción para que se realice una tarea.
+            El encargado de gestionar los eventos es el DOM(Document Object Model).
+    
+            MANEJADOR:
+                Acción que se va a manejar. Por ejempo, en el evento click (hacer click con el ratón) el manejador es onClick.
+        -->
+    </head>
+
+    <body>
+        <h1>Modelo de eventos avanzados del W3C</h1>
+        <h3 id="w3c">Modelo del W3C</h3>
+        <h3 id="w3canonima">Modelo del W3C con funciones anónimas</h3>
+
+        <script>
+            /* elemento.addEventListener("<evento_sin_on>",<funcion>,<false|true>); */
+            document.getElementById("w3c").addEventListener("click", saludarUnaVez, false);
+            document.getElementById("w3c").addEventListener("click", colorearse, false);
+            document.getElementById("w3c").addEventListener("mouseover", fondo, false);
+
+            function saludarUnaVez() {
+                alert("¡Hola, caracola!");
+                document.getElementById("w3c").removeEventListener("click", saludarUnaVez);//Para quitar el evento
+            }
+
+            function colorearse() {
+                document.getElementById("w3c").style.color = "red";
+            }
+            //Funcion con parametros(?)
+            function fondo(id) {
+                document.getElementById(id).style.background = "blue";
+            }
+
+            /* Funciones anónimas */
+            /* elemento.addEventListener("<evento_sin_on>",function(){<codigo_funcion}),false); */
+            document.getElementById("w3canonima").addEventListener("click", function () {
+                this.style.background = "#C0C0C0";
+            });
+            
+            /*Para pasar parametros a una funcion dentro de un listener(?)
+                    //Creo una funcion anonima y dentro de esta le paso la funcion que queramos con su parametro
+                    */
+                   
+            /* elemento.addEventListener("<evento_sin_on>",function(){funcion()}),false); */
+            document.getElementById("w3canonima").addEventListener("click", function () {
+                fondo("w3c");
+            });
+        </script>
+    </body>
+
+</html>

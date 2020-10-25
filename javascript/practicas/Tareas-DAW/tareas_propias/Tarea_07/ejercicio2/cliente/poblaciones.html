@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <title>DWEC07 - Buscador de poblaciones</title>
+        <!--Debemos incluir este scrip con la api key que tengamos nosotros. Para sacar apikey mirar googleapis-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCshS9ej4P98Ga22zyy_mxk3h53iNaT8fM&callback=initMap"
+        async defer></script>
+
+        <!--incluimos la libreria jquery-->
+        <script src="js/jquery-3.3.1.min.js"></script>  
+        <script src="js/ubicacionUsuario.js"></script>
+        <script src="js/ejercicio_2.js"></script>
+
+        <link rel="stylesheet" href="style/estilos.css"/>
+    </head>
+    <body>
+        <!-- Capa para mostrar la ubicación actual -->
+        <div id="ubicacion-actual">
+            <div id="maps"></div>
+        </div>
+
+        <form id="formulario"> 
+            <div class="linea_formulario">
+                <label for="poblacion" >Población</label>
+                <input type="text" id="poblacion" autocomplete="off"  />	
+            </div>
+            <div class="linea_formulario">
+                <input type="button"  id="buscar" value="Buscar" />			
+            </div>  
+
+         
+        </form>	
+
+        <!-- Capa para mostrar información de la población. Inicialmente está oculta -->
+        <div id="informacion" class="oculto"> </div>
+
+
+    </body>
+</html>

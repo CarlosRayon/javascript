@@ -1,0 +1,35 @@
+
+Propiedades del objeto nodo según el DOM nivel 2 de W3C
+
+Propiedad	Valor	Descripción	
+
+nodeName                        String	Varía según el tipo de nodo.                                                
+nodeValue                       String	Varía según el tipo de nodo.                                                
+nodeType                        Integer	Constante que representa cada tipo.                                         
+parentNode                      Object	Referencia al siguiente contenedor más externo.                             
+childNodes                      Array	Todos los nodos hijos en orden(espacio y comentarios)                                       
+children                        Array   Solo los elementos.(sin especios y comentarios)
+firstChild                      Object	Referencia al primer nodo hijo.                                             
+lastChild                       Object	Referencia al último nodo hijo.                                             
+previousSibling                 Object	Referencia al hermano anterior según su orden en el código fuente.
+previousElementSibling          Object  Refencia al hermano anterior pero sin incluir los nodos de tipo texto
+nextSibling                     Object	Referencia al hermano siguiente según su orden en el código fuente.
+nextElementSibling              Objecto Referencia al hermano siguiente pero sin incluir los nodos de tipo texto
+attributes                      NodeMap	Array de atributos de los nodos.                                           
+ownerDocument                   Object	Contiene el objeto document.                                                
+namespaceURI                    String	URI a la definición de namespace.                                           
+Prefix                          String	Prefijo del namespace.                                                              
+localName                       String	Aplicable a los nodos afectados en el namespace.                           
+
+
+
+Métodos del objeto nodo según el DOM nivel 2 de W3C
+Método                          Descripción                                                                IE5+Mozilla	Safari
+appendChild(newChild)           Añade un hijo al final del nodo actual.                                     Sí.	Sí.	Sí.
+cloneNode(deep)                 Realiza una copia del nodo actual (opcionalmente con todos sus hijos).      Sí.	Sí.	Sí.
+hasChildNodes()                 Determina si el nodo actual tiene o no hijos (valor boolean).               Sí.	Sí.	Sí.
+insertBefore(new, ref)          Inserta un nuevo hijo antes de otro hijo.                                   Sí.	Sí.	Sí.
+removeChild(old)                Borra un hijo.                                                              Sí.	Sí.	Sí.
+replaceChild(new, old)          Reemplaza un hijo viejo con el nuevo viejo.                                 Sí.	Sí.	Sí.
+isSupported(feature, version)	Determina cuando el nodo soporta una característica especial.               No.	Sí.	Sí.
+

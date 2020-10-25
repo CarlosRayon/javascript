@@ -1,0 +1,29 @@
+/*******************EVENTOS MAS UTILIZADOS*************************
+ 
+Algunas categorías y tipos de eventos en el modelo W3C
+
+Categoría           Tipo de Evento	Descripción	Burbujea	Se puede cancelar
+Ratón	
+                    click       Al hacer click sobre un elemento. Un click se define como mousedown y mouseup sobre la misma localización en pantalla.	Sí.	Sí.
+                    dblclick            Al hacer doble click sobre un elemento.	Sí.	Sí.
+                    mousedown           Al mantener presionado el botón del ratón sobre un elemento.	Sí.	Sí.
+                    mousedownmouseup    Al soltar el botón del ratón que estaba sobre un elemento.	Sí.	Sí.
+                    mouseover           Al pasar el ratón justo sobre un elemento.	Sí.	No.
+                    mousemove           Cuando el ratón se mueve mientras está sobre un elemento.	Sí.	Sí.
+                    mouseout            Cuando el ratón sale fuera de un elemento.	Sí.	Sí.
+
+Teclado
+                    keydown     Este evento se dispara justo antes del evento keypress al presionar una tecla.	Sí.	Sí.
+                    keypress            Este evento se dispara después de keydown al presionar una tecla.	Sí.	Sí.
+                    keyup               Al soltar una tecla.	Sí.	Sí.
+                    Frame
+
+HTML
+                    load	Se dispara cuando se ha terminado de cargar todo el contenido de un documento, incluyendo ventanas, frames, objetos e imágenes.	No.	No.
+                    unload	Al salir de un documento y modificar el contenido de una ventana.	No.	No.
+                    abort	Cuando se detiene la carga de un objeto/imagen antes de que esté completamente cargado.	Sí.	No.
+                    error	Cuando se detiene la carga de un objeto/imagen antes de que esté completamente cargado.	Sí.	No.
+                    resize	Cuando se redimensiona un documento.	Sí.	No.
+                    scroll	Cuando nos desplazamos por el documento con scroll.	Sí.	No.
+
+*/

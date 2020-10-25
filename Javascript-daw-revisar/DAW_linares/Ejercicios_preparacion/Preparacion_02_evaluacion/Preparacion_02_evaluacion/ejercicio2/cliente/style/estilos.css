@@ -1,0 +1,153 @@
+
+/* Estilos generales*/
+
+@font-face{
+	font-family:Roboto;
+	src:url("fonts/Roboto.ttf");
+}
+
+
+*{
+	font-family: 'Roboto', sans-serif;
+}
+
+
+/* Estilos relativos al Mapa */
+
+
+#informacion-posicion{
+	border:2px solid black;
+	width:80%;
+	padding:20px;
+	margin:0 auto;
+	background-color:#BEBEBE;
+}
+
+#informacion-posicion #mapa{
+	width:80%;
+	margin:0 auto;
+	height:200px;
+	border:2px solid black;
+}
+
+	
+/* Estilos relativos al formulario */
+
+#formulario{
+	width:600px;
+	border:2px solid black;
+	margin:20px;
+	padding:20px;
+	float:left;
+}
+
+#formulario .linea_formulario:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+
+#formulario .linea_formulario label{
+	float:left;
+	width:20%;
+}
+
+#formulario .linea_formulario input[type="text"]
+{
+	float:left;
+	width:60%;
+	padding:4px;
+	margin-right:10px;
+}
+
+#formulario  button
+{
+	float:left;
+	width:10%;
+	padding:2px;	
+}
+
+
+#formulario .botones{
+	margin:0 auto;
+}
+
+#formulario input:focus{
+	border:2px solid black;
+	outline:0px;
+	background-color:#B9DAF4;
+}
+
+
+/* Sugerencias de origen */
+
+#sugerencia-origen{
+	border:2px solid black;
+	width:300px;
+	padding-left:0px;
+	position:absolute;
+
+}
+
+#sugerencia-origen li {
+	font-size:.9em;
+	list-style-type:none;
+	padding-left:5px;
+	background-color:white;
+	margin-bottom:5px;
+	margin-top:5px;
+}
+
+#sugerencia-origen li:hover{
+	background-color:#B9DAF4;
+}
+
+/* Destinos */
+
+#informacion-destinos{
+	border:2px solid black;
+	width:500px;
+	margin:20px;
+	padding:10px;
+	background-color:#C0E7AF;
+
+
+}
+
+#informacion-destinos li {
+	font-size:.9em;
+	list-style-type:none;
+	padding-left:5px;
+	background-color:#C0E7AF;
+	margin-bottom:5px;
+	margin-top:5px;
+}
+
+#informacion-destinos li:hover{
+	background-color:#9ABF8A;
+}
+
+
+/* Caja de información del vuelo*/
+#informacion-vuelo{
+	border:2px solid black;
+	width:400px;
+	margin:20px;
+	padding:20px;
+	background-color:#FFE066;
+	float:left;
+}
+
+
+
+/* Visibilidad de elementos */
+
+.oculto{
+	display:none;
+}
+
+.visible{
+	display:block;
+}
+

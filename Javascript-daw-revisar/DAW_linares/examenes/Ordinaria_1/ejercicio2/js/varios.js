@@ -1,0 +1,9 @@
+
+
+const ESTADO_PREGUNTA={
+    SIN_RESPONDER:1,
+    NO_CONTESTADA:2,
+    ACIERTO:3,
+    FALLO:4
+};
+

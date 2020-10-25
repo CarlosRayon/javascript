@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Date</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+
+        main{
+            width: 500px;
+            height: 300px;
+            margin: 10px auto;
+            background: lightblue;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+    }
+    
+    
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Probando input tipo date</h1>
+        <input type="date" id="fecha" value="">
+        <button id="pulsar">Pulsar</button>
+
+
+        <p> El valor del input es: <span id="value"></span></p>
+        <p> El valor del atributo value es: <span id="attr"></span></p>
+
+    </main>
+</body>
+
+
+
+<script>
+
+    /* No es lo mismo el atributo que el value*/
+    $(document).ready(function () {
+
+        $input = $('#fecha');
+        //Para poner fecha por defecto cambiamos su atributo value
+        $input.attr('value', '2011-11-12');
+
+        $('#pulsar').click(function () {
+
+            // $input.val('2011-11-11');  //Para cambiar el valor que muestra
+            $input.attr('value', '2011-11-12');
+
+            //Para recuperar la fecha que elige el usuario debemos usar propiedad val(). attr no dará la fecha ya definida en el value la cual con cambia
+
+            var fechaVal = $input.val(); //Val es valor que tienen ahora mismo el input
+            var fechaAtri = $input.attr('value'); // attr valor que tiene el value
+
+            console.log(fechaVal);
+            console.log(fechaAtri);
+
+            $('#attr').html(fechaAtri);
+            $('#value').html(fechaVal);
+
+        })
+    })
+
+
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+Atributos del DOM:
+    -IMPORTANTE: Algunas propiedades toman en cuenta los espacios y comentarios como nodos. Otros no.
+    -Al modificar elementos. Por ejemplo valores de los atributos. Los cambios son dinamicos. No se ven viendo el codigo fuente de la pagina
+    -RECUERDA!!! Para ver los cambios los vemos en la consola depuracion-elements 
+    -RECUERDA!!! Se empieza a contar desde elemento 0
+
+        innerHTML----capura valor del elemento
+        value ------captura valor de los dato introducciodos en el input
+
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            function accesoElementos()
+            {
+                var elemento1 = document.getElementById("listatareas");//Para probar nodos y elementos
+                var enlace = document.getElementById("enlace");//Para probar los atributos
+
+                // alert("Resultado para parentElement\n " + elemento1.parentNodes.innerHTML + "\nMuestra el contenido del padre Toma en cuenta espacios");
+                
+                // alert("Resultado para parentElement\n " + elemento1.parentElement.innerHTML + "\nMuestra el contenido del padre No toma en cuenta espacios");
+                
+                // elemento1.parentElement.innerHTML=""; Podria vaciar totalmente por ejemplo el contenido. Util para div.
+
+                // alert("Resultado para childNodes\n " + elemento1.childNodes[7].innerHTML+ "\nNodos hijos. Toma en cuenta tanto a los espacios como los comentarios"); 
+
+                // alert("Resultado para children\n " + elemento1.children[2].innerHTML+ "\nElementos hijos. No toma en cuenta espacios o comentarios");
+
+                // alert("Resultado para firstChild\n " + elemento1.firstChild.innerHTML + "\nPrimer nodo hijo. Toma en cuenta espacios y comentarios");
+
+                // alert("Resultado para firstElementChild\n " + elemento1.firstElementChild.innerHTML + "\nPrimer elemento hijo. NO toma en cuenta espacios y comentarios");
+
+                // alert("Resultado para lastChild\n " + elemento1.lastChild.innerHTML + "\nUltimo hijo. Toma en cuenta espacios y comentarios");
+
+                // alert("Resultado para lastElementChild\n " + elemento1.lastElementChild.innerHTML + "\nUltimo hijo. No toma en cuenta espacios y comentarios");
+
+                // alert("Resultado para previousSibling\n " + elemento1.previousSibling.innerHTML + "\nNodo hermano anterior. Toma en cuenta espacios y comentarios");
+
+                // alert("Resultado para previousElementSibling\n " + elemento1.previousElementSibling.innerHTML + "\nNodo hermano anterior. No toma en cuenta espacios y comentarios");
+
+                // alert("Resultado para nextSibling\n " + elemento1.nextSibling.innerHTML + "\nNodo hermano posterior. Toma en cuenta espacios y comentarios");
+
+                // alert("Resultado para nextElementSibling\n " + elemento1.nextElementSibling.innerHTML + "\nNodo hermano. No toma en cuenta espacios y comentarios");
+
+
+            }
+
+            window.onload = accesoElementos;
+
+        </script>
+    </head>
+
+    <body>
+        <div id="divprimero">
+            <h2>Cosas para hacer (Hermano ANTERIOR de ol)</h2>
+            <ol id="listatareas" type="lista">
+                <li>Texto de li 1 (hijo de ol)</li>
+                <li>Texto de li 2 (hijo de ol)</li>
+                <!--Comentario de prueba-->
+                <li>Texto de li 3 (hijo de ol)</li>     
+            </ol>
+            <p id="notasLista">Texto del parrafo (hermano POSTERIOR de ol)</p> 
+        </div>    
+        <div id="divsegundo">
+            <a id="enlace" href="www.prueba.com" title="enlace a una web">Enlace</a>
+        </div>
+    </body>
+</html>

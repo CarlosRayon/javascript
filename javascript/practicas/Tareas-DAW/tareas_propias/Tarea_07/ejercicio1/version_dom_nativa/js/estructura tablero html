@@ -1,0 +1,27 @@
+
+  /* 
+<div id="contenedor">
+
+     <h1>TABLERO DE DIBUJO</h1>
+     
+     <div id="paleta">
+        <p>Haga CLICK en el boton para empezar a pintar</p> 
+     
+        <div id="color1" class="color seleccionado"></div> Añadir la clase seleccionado para cuando se seleccione
+        <div id="color2" class="color"></div>
+        <div id="color3" class="color"></div>
+        <div id="color4" class="color"></div>
+        <div id="color5" class="color"></div>
+        <div id="color6" class="color"></div>
+        <p>Estado del pincel: <span style="color: #F00">SIN SELECCIONAR/ACTIVO</span></p>capturar span para cambiar. Cambiar el color por el del seleccionado. puedo capturar el background del div?¿?¿ 
+     </div>
+
+     <div class="zonadibujo">
+        <div class="filadibujo">   40 filas     
+        <div class="celdadibujo" id="color1"></div> por cada fila 40 celdas 
+        <div class="celdadibujo" id="color1"></div>
+        <div class="celdadibujo"></div>
+        <div class="celdadibujo"></div>          
+     </div>      
+
+</div>

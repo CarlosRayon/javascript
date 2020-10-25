@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+            <meta charset="utf-8" />
+            
+            <link rel="stylesheet" href="style/estilos.css"/>           
+            <link rel="icon" href="#" />
+                   
+            <script src="js/lib/jquery-3.3.1.min.js" type="text/javascript"></script>
+            <script src="js/funciones.js" type="text/javascript"></script>
+            <script src="js/ejercicio2.js" type="text/javascript"></script>
+ 
+           <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdntwklYIm4ynQXZFcCtVUACGo45atgXY"> </script>          
+        
+           <title>DWEC07 - Ejercicio 2 - Buscador de poblaciones</title>	           
+	</head>
+<body>
+     <!-- Capa para mostrar la ubicación actual -->
+        <div id="ubicacion-actual">
+            <div id="mapa1" class="mapa"></div>
+        </div>
+    
+    	<form id="formulario"> 
+            <div class="linea_formulario">
+		<label for="poblacion" >Población</label>
+		<input type="text" id="poblacion" autocomplete="off"  />	
+            </div>
+            <div class="linea_formulario">
+		<input type="button"  id="buscar" value="Buscar" />			
+            </div>  
+            
+	</form>	
+		
+        <!-- Capa para mostrar información de la población. Inicialmente está oculta -->
+        <div id="informacion" class="oculto"> 
+         <div id="sugerencia">
+                <ul>
+                    <li>Oviedo</li>
+                </ul>
+            </div>
+        </div>
+	
+    
+</body>
+</html>

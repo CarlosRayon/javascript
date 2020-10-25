@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simple Map</title>
+        <meta name="viewport" content="initial-scale=1.0">
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+        <div id="original"></div>
+        <script>
+
+            var modulos = ["DWEC", "DWES", "EIE", "DIW", "DAW"];
+            var alumnos = ["carlos", "juan", "ines", "slot"];
+
+            var array = new Array(modulos.length + 1);//Creo tantas filas como datos + 1 para poner los valores del arrary
+
+            array[0] = new Array();//La fila 1 va a ser un array...
+            array[0].push("X");//...en la primera posicion una x...
+            for (var i = 0; i < alumnos.length; i++) {//resto posiciones el nombre de los alumnos
+                array[0].push(alumnos[i]);
+            }
+
+            for (var i = 1; i < array.length; i++) {//Para el resto de filas (la 0 ya la tengo pongo desde la 1 en adelante
+                array[i] = new Array(modulos.length)//...Tendtan tantas columnas como modulos
+                array[i][0] = modulos[i - 1];//...En la primera columna el valor del modulo
+            }
+
+            //Con la estructura creada relleno los datos
+            for (var i = 1; i < array.length; i++) {
+                for (var j = 1; j < array[i].length; j++) {
+                    array[i][j] = "a";
+                }
+
+            }
+
+            var array2 = new Array(alumnos.length + 1);//Creo tantas filas como datos + 1 para poner en la fila de mas los valores extra
+
+            array2[0] = new Array();//La fila 1 va a ser un array...
+            array2[0].push("X");//...en la primera posicion una x...
+            for (var i = 0; i < modulos.length; i++) {//resto posiciones el nombre de los modulos
+                array2[0].push(modulos[i]);
+            }
+
+
+            for (var i = 1; i < array2.length; i++) {//Para el resto de filas (la 0 ya la tengo pongo desde la 1 en adelante
+                array2[i] = new Array(modulos.length + 1)//...Tendtan tantas columnas como modulos mas 1 porque la primera fila ya tiene un valor extra la x
+                array2[i][0] = alumnos[i - 1];//...En la primera columna el valor del modulo
+            }
+
+            //Con la estructura creada relleno los datos
+            for (var i = 1; i < array2.length; i++) {
+                for (var j = 1; j < array2[i].length; j++) {
+                    array2[i][j] = "a";
+                }
+            }
+            //Creo la tabla cono el segundo array
+            var tabla = "<table>";
+
+            for (var i = 0; i < array2.length; i++) {
+                tabla += "<tr>";
+
+                for (var j = 0; j < array2[i].length; j++) {
+                    tabla += "<td>" + array2[i][j] + "</td>"
+
+                }
+
+                tabla += "</tr>";
+            }
+
+            tabla += "</table>";
+            document.body.innerHTML = tabla;
+            
+        </script>
+
+    </body>
+</html>

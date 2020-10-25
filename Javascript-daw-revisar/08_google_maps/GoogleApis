@@ -1,0 +1,18 @@
+
+Para usar la api de google debemos tener una api key
+Para conseguirla nos vamos a 
+https://console.developers.google.com
+
+pinchamos en seleccionar proyecto y creamos uno nuevo con un cuenta de google
+le damos nombre y clave
+
+vamos a al biblioteca de apis
+vamos a apis de google maps
+y vamos a api google static maps
+
+En la siguente ventana las haiblitamos
+
+y en la siguiente credencial-crear credenciales y crear api
+la api que tengamos sera la que tendremos que usar en nuestro librerias de google
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+Arrayss
+-->
+<html>
+
+<head>
+    <title>Arrays</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var array_juegos = ["Super Mario", "Castlevania", "Metal Gear", "Darksider", "Mega Man", "Metroid", "Ilusion of Time"];
+
+        var array_numeros = [11, 22, 33, 44, 55, 66, 77];
+
+        var literal_con_array = {
+
+            nombre: "literal",
+            array: [[1, 2, 3, 4],
+            [5, 6, 7, 8],
+            [9, 10, 11, 12]]
+        };
+
+
+        function ordenarArraysString(a, b, )//Para ordenar array con Strings
+        {
+            if (a == b) {
+                return 0;
+            }
+            else {
+                if (a > b) {//RECUERDA!!!Cambiando el simbolo ordenamos de forma accendente o descendente < MAS A MENOS  > MENOS A MAS
+                    return 1;
+                } else {
+                    return -1;
+                }
+            }
+        }
+
+        function ordenarArrayNumero(a, b)//Para ordenar array con numeros
+        {
+            return parseInt(b) - parseInt(a);//RECUERDA!!! Cambiamos orden para cambiar ordenacion parseInt(a)-parseInt() ASCENDENTE parseInt(b)-parseInt(a) DESCENDENTE
+        }
+        //ORDENAR ARRAY
+        console.log(array_juegos.sort());//Ordenamos de forma ascendente RECUERDA NO FUNCIONA BIEN PARA NUMEROS
+        console.log(array_juegos.sort(ordenarArraysString));//Pasandole la funcion dependiendo del simbolo ordena de forma ascendente o descendiente
+        console.log(array_numeros.sort(ordenarArrayNumero));//Pasandole la funcion dependiendo del simbolo ordena de forma ascendente o descendiente
+
+
+    </script>
+</head>
+
+<body>
+    <div>TODO write content</div>
+</body>
+
+</html>

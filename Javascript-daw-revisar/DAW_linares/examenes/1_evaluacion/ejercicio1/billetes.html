@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Reserva de billetes</title>
+         <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style/viajes.css" />	
+   
+        <script src="js/varios.js" type="text/javascript"></script>
+        <script src="js/autobus.js" type="text/javascript"></script> 
+        <script src="js/autobus_prueba.js" type="text/javascript"></script>      
+        <script src="js/flota.js" type="text/javascript"></script>
+  <!--   <script src="js/flota_prueba.js" type="text/javascript"></script> -->
+        <script src="js/billetes_vista.js" type="text/javascript"></script>
+          
+    </head>
+
+	<body>		
+            <h1 class="billetes">Reserva de billetes</h1>
+
+            <form id="billetes" action="#" method="get">
+            <div class="linea_formulario limpia">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre"  />
+            </div>  
+
+            <div class="linea_formulario limpia">
+                    <label for="apellidos" >Apellidos</label>
+                    <input type="text" name="apellidos" id="apellidos" />
+            </div>
+
+            <div class="linea_formulario limpia">
+                    <label for="dni" >DNI</label>
+                    <input type="text" name="dni" id="dni" />
+            </div>
+ 
+             <div class="linea_formulario limpia">
+		<label for="origen">Origen</label>
+                <select name="origen" id="origen">
+			<option selected value="none">Elige uno...</option>			
+			<option  value="Santander">Santander</option>
+			<option value="Torrelavega">Torrelavega</option>
+			<option value="Reinosa">Reinosa</option>
+			<option value="Suances">Suances</option>
+		</select>						
+	 </div>
+             <div class="linea_formulario limpia">
+		<label for="destino">Destino</label>
+                <select name="destino" id="destino">
+			<option selected value="none">Elige uno...</option>			
+			<option  value="Santander">Santander</option>
+			<option value="Torrelavega">Torrelavega</option>
+			<option value="Reinosa">Reinosa</option>
+			<option value="Suances">Suances</option>
+		</select>						
+	 </div>                
+                
+             <div class="linea_formulario limpia precio">
+                    <label for="precio" >Precio</label>
+                    <input type="text" name="precio" id="precio" disabled />
+                     <input type="text" name="descuento" id="descuento" placeholder="Código de descuento" />
+                    <input type="button" id="aplicar-descuento" value="Aplicar" />
+            </div>                
+                
+           
+             <div class="linea_formulario limpia">
+                    <label>Ubicación</label>
+                    <div class="botones ">
+		  	  <input type= "radio" name="ubicacion" id="ubicacion_ventanilla" value="ventanilla" checked="checked"/><span>Ventanilla</span>
+		 	  <input type= "radio" name="ubicacion" id="ubicacion_pasillo" value="pasillo"/><span>Pasillo</span>
+		    </div>
+             </div>               
+                
+            <div class="linea_formulario limpia">	
+                    <input type="submit" name="comprar" id="comprar" value="Comprar billete"   /> 
+            </div>
+
+            <div id="mensaje" class="linea_formulario">
+            </div>
+	</form>
+	
+	
+	</body>
+</html>
+
+
+

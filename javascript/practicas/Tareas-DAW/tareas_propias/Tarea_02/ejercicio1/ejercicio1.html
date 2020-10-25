@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+Carlos Rayon Alvarez Ejercicio 1
+-->
+<html>
+	<head>
+		<title>ejercicio 1</title>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/gif" href="#" />
+	</head>
+	<body>
+		<script>
+			/*
+ Carlos Rayon Alvarez Ejercicio 1
+
+ 1. Crea un script que pida al usuario dos reales. A continuación se mostrará un mensaje que indique si
+ uno de ellos es positivo y el otro es negativo.
+
+ **No estoy seguro si el mensaje final que se muestra es el apropiado pero la logica del programa creo que esta bien**
+ */
+
+			//VARIABLES
+			var intro1, intro2;
+
+			//Inicializo  variables conviertiendo a numeros reales.
+			intro1 = parseFloat(prompt('introducir el primer numero real'));
+			intro2 = parseFloat(prompt('introducir el segundo numero real'));
+
+			//Creo una funcion validadora de numeros
+
+			//FUNCIONES
+			function esNumero(c) {
+				//le paso un parametro
+
+				if (isNaN(c)) {
+					//Si el parametro no es numero isNan( NO es un numero) devuelve true ;
+
+					return false; //Por lo tanto no se puede convertir a numero
+				} else {
+					return true; //En caso contrario si se puede convertir a numero
+				}
+			}
+
+			//Creo funcion para comprobar si el numero es positivo
+			function compruebaNumeros(numero1, numero2) {
+				if ((numero1 >= 0 && numero2 <= 0) || (numero1 <= 0 && numero2 >= 0)) {
+					//Si uno es positivo >0 y el otro negativo <0 o viceversa
+					return true;
+				} else {
+					return false;
+				}
+			}
+
+			//Uso las funciones. Antes de usarlas compruebo que los datos que vamos a introduccir son correctosa
+
+			if (esNumero(intro1) && esNumero(intro2)) {
+				//Los dos valores tienen que ser numeros
+
+				if (compruebaNumeros(intro1, intro2)) {
+					console.log('Has introduccido un numero positivo y otro negativo');
+				} else {
+					console.log(' NO!!! has introduccido un numero positivo y otro negativo');
+				}
+			} else {
+				//de no ser algun valor numero nos mostrar el error
+
+				console.error('Ningun valor introduccido es un numero.Vuelva intentarlo');
+			}
+
+			/*Pruebas realizadas
+ Para probar la funcion esNumero()
+ var resultado=esNumero(intro1);
+ console.log(resultado);
+ Para probar la funcion compruebaNumero()
+
+ var positivo=compruebaNumeros(intro1);
+ console.log(positivo);*/
+		</script>
+	</body>
+</html>

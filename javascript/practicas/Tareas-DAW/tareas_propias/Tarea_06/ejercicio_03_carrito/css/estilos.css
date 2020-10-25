@@ -1,0 +1,142 @@
+
+/* Tipografía general */
+*{
+	font-family:"Open Sans";
+}
+		
+		
+/* Caja con el carrito de la compra */
+#carrito {
+	border:5px solid black;
+	margin-right:20px;
+	width:400px;			
+	background-image:url("images/carro.png");
+	background-repeat:no-repeat;
+	background-position-x:right;
+	background-origin: content-box;
+	background-color:#d3d3d3;
+	background-size:10%;
+	float: left;
+	padding: 20px;	
+}
+
+/* Caja con los productos */
+#productos{
+	border:5px solid black;
+	float:left;
+	background-image:url("images/tienda.png");
+	background-repeat:no-repeat;
+	background-position-x:right;
+	background-origin: content-box;
+	background-size:10%;
+	background-color:#8eb7fb;
+	float: left;
+	padding: 20px;
+	width:700px; 
+}
+
+
+/* Artículo individual */ /* MODIFICADO */		
+#productos .articulo {	
+	padding:10px; 
+	height: 200px; 
+	width: 200px;
+	margin-bottom: 20px; 
+	float:left; 	
+}
+
+/* Artículo individual en el carrito */	/*MODIFICADO */	
+#carrito .articulo {	
+	width:100%;
+    padding:10px; 
+	margin-bottom: 20px; 
+}
+
+
+/* Imágenes de la tienda */
+#productos img{
+	border:5px solid black;
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	padding:10px;
+	margin-bottom:0px;
+	display:block;
+	margin:0 auto;
+	background-color:white;
+}
+
+/* Imágenes del carrito */
+#carrito img{
+	border:2px solid black;
+	width:50px;
+	height:50px;
+	border-radius:50%;
+	padding:10px;
+	margin-bottom:10px;
+	background-color:white;
+	vertical-align:middle;
+	margin-right:20px;
+	
+}
+
+
+/* Contenedor con la información de cada artículo (precio, stock y botón de compra */
+.articulo div.informacion{
+     margin-top:10px;
+}
+	
+
+/* Botones del carrito y los artículos */
+#productos button{
+	border:1px solid black;
+	display:block;
+	width:80%;
+	margin:0 auto;
+	margin-top:5px;
+}
+
+ #carrito button{
+	border:1px solid black;
+	margin-right:5px;
+	
+}
+
+/* Texto (span) del carrito y los artículos */
+.articulo span.precio, #carrito span.precio {
+	background-color: #E3B721;
+	color: white;
+	padding-left: 5px;
+	padding-right:5px;
+	margin-right:10px;	
+	border:1px solid black;
+}
+
+
+/* Texto (span) del carrito y los artículos */
+.articulo span.stock-negativo, #carrito span.stock-negativo {
+	background-color: #F04925;
+	color: white;
+	padding-left: 5px;
+	padding-right:5px;
+	margin-right:10px;	
+	border:1px solid black;
+}
+
+/* Texto (span) del carrito y los artículos */
+.articulo span.stock-positivo, #carrito span.stock-positivo{
+	background-color: #61B30F;
+	color: white;
+	padding-left: 5px;
+	padding-right:5px;
+	margin-right:10px;	
+	border:1px solid black;
+}
+
+
+.borde{
+	background-color:pink;
+	border:solid 1px;
+}	
+			
+			

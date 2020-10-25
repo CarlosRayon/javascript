@@ -1,0 +1,28 @@
+
+/********************* Estilos generales ******************************/
+
+*{
+	font-family: 'Ubuntu', sans-serif;
+        box-sizing: border-box;
+}
+
+
+@font-face{
+	font-family: "Ubuntu";
+	src: url("fonts/Ubuntu-Regular.ttf");
+}
+
+/********************* Título de la página ******************************/
+
+h1{
+    text-align:center;
+    color: #FFF;
+    font-size:3em;
+}
+
+h1 span{
+    background-color:#ebca0b;
+    border-radius:3px;
+    padding:10px;
+}
+

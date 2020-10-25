@@ -1,0 +1,33 @@
+
+@font-face{
+	font-family:DigitalDream;
+	src:url(fonts/DIGITALDREAM.ttf);
+}
+
+body{
+	font-family:DigitalDream;
+	font-size:2em;
+}
+
+.titulo{
+	font-size:1.5em;
+	margin:15px;
+	padding:15px;
+	border:5px solid #386fc9;
+	background-color:#8596b2;
+	width:50%;
+	margin:20px auto;
+	border-radius: 10px;
+	text-align:center;
+}
+
+
+.cuenta{
+	margin:15px;
+	padding:15px;
+	border:5px solid #009900;
+	background-color:#99FF33;
+	width:50%;
+	margin:20px auto;
+	border-radius: 10px;
+}

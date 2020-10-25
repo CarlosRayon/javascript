@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Async - Await</title>
+	</head>
+	<body>
+		<script>
+			async function getData() {
+				try {
+					/* for post request */
+					const content = {
+						name: 'carlos',
+						email: 'test@test',
+					};
+
+					/*GET*/
+					// const response = await fetch(`script.php`);
+
+					/* POST */
+					const response = await fetch(`script.php`, {
+						method: 'post',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						body: JSON.stringify(content),
+					});
+
+					console.log('Fetch', response);
+
+					if (response.ok) {
+						// const data = await response.json();
+						const data = await response.text();
+						console.log('Final Data', data);
+					} else {
+						throw { status: response.status, msg: response.statusText };
+					}
+				} catch (ex) {
+					console.log('Exception', ex);
+				}
+			}
+
+			getData();
+		</script>
+	</body>
+</html>

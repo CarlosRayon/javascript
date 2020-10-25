@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <script>
+        //Creo una clase de tipo caja
+        function Caja(ancho, largo, alto) {
+            //Un método para esta clase. No le pongo el this para hacerla privada
+            function volumen(a, b, c) {
+                return a * b * c;
+            }
+
+            //Creo una propiedad que tenga el valor devuelto por la función
+            this.volumenCaja = volumen(ancho, largo, alto);
+
+        }
+
+        //Instancion un objeto de tipo Caja
+        var contenedor = new Caja(5, 4, 5);
+    </script>
+    <!--No funcionara-->
+    <input type="button" value="VolumenNo" onclick="alert(volumen(5,4,6))">
+    <!--no funcionara-->
+    <input type="button" value="CajaNoEnObjeto" onclick="alert(contenedor.volumen(5,4,6))">
+    <!--Si funcionara-->
+    <input type="button" value="VolumenNo" onclick="alert(contenedor.volumenCaja)">
+</body>
+
+</html>

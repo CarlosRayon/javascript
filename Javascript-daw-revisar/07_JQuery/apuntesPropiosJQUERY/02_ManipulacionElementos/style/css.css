@@ -1,0 +1,17 @@
+
+div{
+    height: 100px;
+    width: 500px;
+    border: 3px solid;
+    margin: 20px;
+}
+
+.borde-azul{
+    background-color: #ccffff;
+    border: 3px solid blue;
+}
+
+.borde-rojo{
+    background-color:#ffcccc;
+    border: 3px solid red;
+}

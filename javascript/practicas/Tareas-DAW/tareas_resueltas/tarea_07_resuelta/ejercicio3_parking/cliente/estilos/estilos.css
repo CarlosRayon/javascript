@@ -1,0 +1,97 @@
+/************************ Estilos generales de la página ***********************************/
+
+*{
+	font-family: 'Roboto', sans-serif;
+	box-sizing:border-box;
+}
+
+
+@font-face{
+	font-family: "Roboto";
+	src: url("fonts/Roboto-Regular.ttf");
+}
+
+@font-face{
+	font-family: "Roboto";
+	src: url("fonts/Roboto-Regular.eot");
+}
+
+h1{
+	text-align:center;
+	font-size:3em;
+}
+
+
+/* Caja de botones */
+
+.botones{
+	width:620px;
+	margin:0 auto;
+	border:5px solid black;
+	padding:10px;
+	margin-bottom:10px;
+}
+
+.botones:after{
+	content:"";
+	display:block;
+	clear:both;
+}
+
+#actualizar{
+		font-size:1.2em;
+		margin-right:10px;
+		float:left;
+}
+
+#guardar{
+		font-size:1.2em;
+		margin-right:10px;
+		float:left;
+}
+
+#actualizar-local{
+		font-size:1.2em;
+		margin-right:10px;
+		float:left;
+}
+
+
+/**************** Mapa ***************************/
+
+#mapa{
+	background:url('images/santander_centro.png'); 
+	width:1213px;
+	height:460px; 
+	border:5px solid black;
+	margin:0 auto;
+	position:relative;
+}
+
+
+
+/********* Botones de información del parking ******************/
+
+.info-parking{
+	position:absolute;
+	width:30px;
+	height:30px;
+	background-size:contain;
+}
+
+.azul{
+	background-image:url("images/azul.png");
+}
+
+
+.naranja{
+	background-image:url("images/naranja.png");
+}
+
+.rojo{
+	background-image:url("images/rojo.png");
+}
+
+.verde{
+	background-image:url("images/verde.png");
+}

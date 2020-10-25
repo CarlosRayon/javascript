@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Basis Pattern</title>
+		<!-- <script src="https://kit.fontawesome.com/5f9638b6a3.js" crossorigin="anonymous"></script> -->
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+			integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
+			crossorigin="anonymous"
+		/>
+		<link href="https://fonts.googleapis.com/css?family=Baloo+Bhaina+2&display=swap" rel="stylesheet" />
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body {
+				background-color: #4a5c6c;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-family: 'Baloo Bhaina 2', cursive;
+			}
+
+			.container {
+				width: 50%;
+				padding: 1.3rem;
+				background-color: #b0b5ba;
+			}
+			.container__title {
+				padding: 0.3rem 0;
+				text-align: center;
+			}
+			.container__group {
+				margin: 0.7rem auto;
+				text-align: center;
+			}
+			.container__label {
+				display: block;
+				margin: 0.2rem;
+				font-size: bold;
+				text-transform: uppercase;
+			}
+
+			.container__input {
+				height: 2rem;
+				padding-left: 5px;
+			}
+			.container__result {
+				height: 80px;
+				text-align: center;
+			}
+
+			#iconBad,
+			#iconGood {
+				display: none;
+			}
+			.padding--left {
+				padding-left: 2px;
+			}
+
+			.btn {
+				display: block;
+				margin: 0 auto;
+				padding: 0.5rem;
+				font-size: bold;
+				color: white;
+				background-color: #248be6;
+				border: none;
+				border-radius: 5px;
+			}
+			.btn__icon {
+				margin-left: 3px;
+			}
+			.container__example {
+				margin: 0.7rem auto;
+				width: 80%;
+			}
+			.container__h2 {
+				text-align: center;
+			}
+			.table {
+				margin: 0 auto;
+				width: 100%;
+			}
+			.table__th {
+				text-align: left;
+			}
+			.table__td,
+			.table__th {
+				margin: 0 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="container__title">REX TESTER</h1>
+			<div class="container__group">
+				<label class="container__label">Intro patter</label>
+				<input id="inputPattern" type="text" value="" placeholder="Intro pattern" class="container__input" />
+				<i class="container__icon padding--left">🤔</i>
+			</div>
+			<div class="container__group">
+				<label class="container__label">Intro String</label>
+				<input id="inputString" type="text" value="" placeholder="Intro pattern" class="container__input" /><i
+					class="container__icon padding--left"
+					>🤔</i
+				>
+			</div>
+
+			<div class="container__result">
+				<h3>RESULT</h3>
+
+				<i id="iconGood" class="container__icon">😎😎😎</i>
+				<i id="iconBad" class="container__icon">🔥🔥🔥</i>
+			</div>
+			<button class="btn">
+				<span class="btn__text">VALIDATE REX</span>
+				<i class="far fa-check-square btn__icon"></i>
+			</button>
+
+			<div class="container__example">
+				<h2 class="container__h2">EXAMPLES</h2>
+				<table class="table">
+					<thead class="table__header">
+						<th class="table__th">Example</th>
+						<th class="table__th">Definition</th>
+					</thead>
+					<tbody class="table__tbody">
+						<tr class="table__tr">
+							<td class="table__td">Only number</td>
+							<td class="table__td">^[0-9]$</td>
+						</tr>
+						<tr class="table__tr">
+							<td class="table__td">Only letters</td>
+							<td class="table__td">^[a-zA-ZñÑ]$</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<script>
+			document.querySelector('.btn').addEventListener('click', function () {
+				const ínputPattern = document.querySelector('#inputPattern').value;
+				const inputString = document.querySelector('#inputString').value;
+				const pattern = new RegExp(ínputPattern);
+				const iconBad = document.querySelector('#iconBad');
+				const iconGood = document.querySelector('#iconGood');
+				const iconWait = document.querySelector('#iconWait');
+
+				if (pattern.test(inputString)) {
+					iconBad.style.display = 'none';
+					iconGood.style.display = 'inline-block';
+				} else {
+					iconBad.style.display = 'inline-block';
+					iconGood.style.display = 'none';
+				}
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Formulario</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="estilos.css" rel="stylesheet" type="text/css"/>
+        <script src="jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="validarCampos.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="contenedor">
+
+            <form id="formulario">
+                <div class="datos">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre">
+                </div>
+
+                <div class="datos">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apelllido">
+                </div>
+
+                <div class="datos">
+                    <label for="fecha_nacimiento">Fecha de nacimimiento</label>
+                    <input type="date" name="fecha_nacimiento" id="fecha_nacimiento">
+                </div>
+
+                <div class="datos">
+                    <label for="numero_juegos">Numero de juegos comprados</label>
+                    <input type="text" name="numero_juegos" id="numero_juegos"> solo numeros
+                </div>
+
+                <div class="datos">
+                    Sexo:
+                    <label for="hombre">Hombre:</label>      
+                    <input type="radio" id="hombre" name="sexo" value="hombre" checked="true">
+                    <label for="mujer">Mujer:</label>   
+                    <input type="radio" id="mujer" name="sexo" value="mujer">
+                </div>
+
+                <div class="datos">
+                    <label for="nintendo">Nintendo</label>
+                    <input type="checkbox" id="nintendo" name="nintendo" value="nintendo">
+                    <label for="playstation">Playstation</label>
+                    <input type="checkbox" id="playstation" name="playstation" value="playstation">
+                    <label for="xbox">Xbox</label>
+                    <input type="checkbox" id="xbox" name="xbox" value="xbox">        
+                </div>
+
+                <div class="datos">
+                    <label for="precio" >Precio</label>
+                    <input type="text" name="precio" id="precio" disabled />
+                    <input type="text" name="descuento" id="descuento" placeholder="Código de descuento" />
+                    <input type="button" id="aplicar-descuento" value="Aplicar" />
+                </div>    
+
+                <div id="datos" class="selector">
+                    <label for="juego">Juego favorio</label>
+                    <select name="juego" id="juego">
+                        <option value="eliga uno">eliga uno</option>
+                        <option value="Super Mario">Super Mario</option>
+                        <option value="Final Fantasy">Final Fantays</option>
+                        <option value="Kimdow Herts">Kimdow Herts</option>
+                        <option value="Iluison of Time">Iluison of Time</option>
+                        <option value="Metal Gear">Metal Gear</option>
+                    </select>              
+                </div>
+
+                <div id="datos" class="selector">
+                    <label for="juego">Peor juego</label>
+                    <select name="peorjeugo" id="peorjuego">
+                        <option value="eliga uno" selected="true">eliga uno</option>
+                        <option value="Metroid">Metroid</option>
+                        <option value="Super Mario">Super Mario</option>
+                        <option value="Metro 2033">Metro 2033</option>
+                        <option value="Secret of Evermore">Secret of Evemore</option>
+                        <option value="Shadow Man">Shadow Man</option>
+                    </select>              
+
+                </div>
+
+                <div id="datos" class="enviar">
+                    <input type="submit" name="enviar" id="enviar" value="ENVIAR">
+                </div>
+
+            </form>
+
+            <div id="mensajes">
+                
+            </div>
+
+
+
+        </div>
+    </body>
+</html>

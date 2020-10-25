@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--
+Hacer que un objeto pre-construido como puede ser un String tenga una función extendida(Una función creada por nosotros)
+-->
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div>TODO write content</div>
+
+    <script>
+        //hacemos que la clase String tenga la función extra "voltear"
+        String.prototype.voltear = function () {
+            var salida = "";
+            for (var i = this.length - 1; i >= 0; i--) {
+                salida += this.substr(i, 1);
+            }
+            return salida;
+        };
+
+        var enString = prompt("Escribe tu String de texto");
+        // document.getElementsByTagName("div")[0].innerHTML = enString.voltear();
+        document.getElementsByTagName("div")[0].innerHTML = enString.split("").reverse().join("");
+
+    </script>
+</body>
+
+</html>

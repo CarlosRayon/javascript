@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<script>
+			/**
+			 *
+			 A tractor on a field receives a set of instructions to move around.
+
+			  A move can be one of the following:
+
+			    F - Move the tractor forward one "unit"
+			    L - Turn the tractor left in place (90 degree turn)
+			    R - Turn the tractor right in place (90 degree turn)
+
+
+			  We want to determine whether a set of instructions will return the tractor to its original position.
+
+			Examples:
+
+			  Input: instructions = "FLFLFLF"
+			  Output: true (its a circular, the tractor returns to its original position)
+
+
+			  Input: instructions = "FFF"
+			  Output: false (the tractor does not end up in its original position)
+
+
+			  Input: instructions = "FLLF"
+			  Output: true
+			**/
+
+			// Returns true if the set of instructions is circular, false otherwise
+
+			function isCircular(input) {
+				const instructions = input.split('');
+
+				let x = 0;
+				let y = 0;
+				let position = 'U';
+
+				instructions.forEach((instruction) => {
+					if (instruction == 'R') {
+						if (position == 'U') {
+							position = 'R';
+						} else if (position == 'R') {
+							position = 'D';
+						} else if (position == 'D') {
+							position = 'L';
+						} else if (position == 'L') {
+							position = 'U';
+						}
+					}
+					if (instruction == 'L') {
+						if (position == 'U') {
+							position = 'L';
+						} else if (position == 'L') {
+							position = 'D';
+						} else if (position == 'D') {
+							position = 'R';
+						} else if (position == 'R') {
+							position = 'U';
+						}
+					}
+					if (instruction == 'F') {
+						switch (position) {
+							case 'U':
+								y++;
+								break;
+							case 'R':
+								x++;
+								break;
+							case 'D':
+								y = (y -1)
+								break;
+							case 'L':
+								x = (x -1)
+								break;
+						}
+					}
+
+					console.log('INTRUCTION', instruction);
+					console.log('POS', position);
+					console.log('X', x);
+					console.log('y', y);
+				});
+
+				if (x == 0 && y == 0) return true;
+				return false;
+			}
+
+			console.log(isCircular('FLFLFLF'));
+		</script>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Query selector</title>
+	</head>
+	<body>
+		<div id="test">
+			<span id="test-id5" class="clase" title="Azul"></span>
+			<span id="test-id4" class="clase" title="Verde"></span>
+			<span id="test-id3" class="clase" title="Naranja"></span>
+			<span id="test-id2" class="clase" title="Lila"></span>
+			<span id="test-id1" class="clase" title="Rojo"></span>
+		</div>
+		<div id="test-2">
+			<span id="test-2-id5" class="clase" title="Azul"></span>
+			<span id="test-2-id4" class="clase" title="Verde"></span>
+			<span id="test-2-id3" class="clase" title="Naranja"></span>
+			<span id="test-2-id2" class="clase" title="Lila"></span>
+			<span id="test-2-id1" class="clase" title="Rojo"></span>
+		</div>
+   
+		<script>
+			/* test */
+			document.getElementById('test-id1').title; /* Rojo */
+			document.querySelector('#prueba .clase').title; /* Azul */
+			document.querySelector('#prueba #test-id3.clase').title; /* Naranja */
+			document.querySelector('#prueba .clase + .clase').title; /* Verde */
+			document.querySelector('#prueba .clase[title^=L]').title; /*  Lila */
+
+			/* test-2*/
+			/* Los 5 <span> */
+			document.querySelectorAll('#test-2 .clase');
+			/* Todos los <span> de una página */
+			document.querySelectorAll('span');
+			/* Todos los <span> y <img> de una página */
+			document.querySelectorAll('span, img');
+			/* Todos los <span> hijos de <div> */
+			document.querySelectorAll('div > span');
+		</script>
+	</body>
+</html>

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="contenedor">
+            <p>Parrafo que sera remplazado</p>      
+        </div>
+        <script>
+            /*Para remplazar un hijo por otro uso:
+             
+                     replaceChild(elementoQueRemplaza, elementoParaRemplaza);
+                   */
+
+            //Creo otro parrafo que remplazara al anterior 
+            
+            var parrafoRemplazar=document.createElement("p");  
+            var texto=document.createTextNode("Este parrafo remplaza al anterior"); 
+            parrafoRemplazar.appendChild(texto);
+            
+            //Capturo y remplazao
+            
+            var div=document.getElementById("contenedor");
+            var elementoParaRemplazar=div.children[0];
+            div.replaceChild(parrafoRemplazar, elementoParaRemplazar);
+
+
+            /*Capturando los elementos de forma distinta pero igual de todas maneras:
+                    var parrafoOriginal=document.getElementsByTagName("div")[0].firstElementChild;//Capturo el elemento que quiero remplazar
+                    document.getElementsByTagName("div")[0].replaceChild(parrafoRemplazar,parrafoOriginal);
+                   */
+    
+</script>
+    </body>
+</html>

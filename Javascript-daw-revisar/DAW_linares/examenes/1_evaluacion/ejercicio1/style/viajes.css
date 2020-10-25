@@ -1,0 +1,139 @@
+
+*{
+	font-family: 'Moon Flower', sans-serif;
+        box-sizing: border-box;
+}
+
+
+@font-face{
+	font-family: "Moon Flower";
+	src: url("fonts/Moon Flower Bold.ttf");
+}
+
+@font-face{
+	font-family: "Moon Flower";
+	src: url("fonts/Moon Flower Bold.eot");
+}
+
+.limpia:after{
+        content:"";
+        display:block;
+	clear:both;
+}
+
+h1{
+
+	background-size: 30px 30px;
+	background-repeat:no-repeat;
+	padding-left:40px;
+}
+
+h1.billetes{
+    	background-image:url("img/tickets.png");
+}
+
+h1.viaje{
+        background-image:url("img/bus.jpg");
+}
+form .linea_formulario{
+	margin:15px;
+	width:400px;
+}
+
+form .linea_formulario label{
+	float:left;
+	width:30%;
+}
+
+
+form .linea_formulario input[type="text"], 
+form .linea_formulario input[type="submit"],
+form .linea_formulario select
+{
+	float:left;
+	width:60%;
+	padding:2px;
+}
+
+form .linea_formulario.precio #precio{
+    	float:left;
+	width:10%;
+	padding:2px;
+}
+
+form .linea_formulario.precio #descuento{
+    	float:left;
+	width:30%;
+	padding:2px;
+        margin-left:2px;
+}
+
+form .linea_formulario.precio #aplicar-descuento{
+    	float:left;
+	width:10%;
+	padding:2px;
+        margin-left:2px;
+}
+
+form .botones{
+	margin:0 auto;
+}
+
+form input:focus {
+	border:2px solid black;
+	outline:0px;
+	background-color:#DBDBDB;
+}
+
+
+form select{
+	border:2px solid grey;
+	outline:0px;
+	background-color:#F2F2F2;
+}
+
+.error{
+	clear:both;
+	padding-left:20px;
+	background-repeat:no-repeat;
+	background-position: 5px center;
+	color:#d70000;
+	padding:5px;
+	padding-left:25px;
+	border: 5px solid #d70000;
+	background-color:rgba(200,0,0,0.2);
+	border-radius:2px;
+	margin:15px;
+ }
+
+	
+.informacion{
+	padding-left:20px;
+	background-repeat:no-repeat;
+	background-position: 5px center;
+	color:#00793d;
+	padding:5px;
+	padding-left:25px;
+	border: 5px solid #00793d;
+	background-color:rgba(200,150,200,0.2);
+	border-radius:2px;
+	margin:15px;
+}
+
+.especial{
+	padding-left:20px;
+	background-repeat:no-repeat;
+	background-position: 5px center;
+	color:#5e85c4;
+	padding:5px;
+	padding-left:25px;
+	border: 5px solid #5e85c4;
+	background-color:#d5dce8;
+	border-radius:2px;
+	margin:15px;
+}
+
+
+.oculto{
+    display:none;
+}

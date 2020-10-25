@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<!--
+Atributos del DOM:
+     -Los atributos son nodos hijos del elemento que los contiene.
+     -Al modificar elementos. Por ejemplo valores de los atributos. Los cambios son dinamicos. No se ven viendo el codigo fuente de la pagina
+     -RECUERDA!!! Para ver los cambios los vemos en la consola depuracion-elements 
+     -RECUERDA!!! Se empieza a contar desde elemento 0
+     -CUIDADO!!! al obtener los datos y modificar el atributo href(?).
+     -El atributo class tiene un tratamiento especial(lo vemos al final de este archivo(??))
+    
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+
+            .clase{
+                color: #ff3333;
+            }
+        </style>
+        <script>
+            function modificacionAtributos()
+            {
+                var parrafos = document.getElementsByClassName("clase");//Tener en cuanta que guarda un array
+                var elemento1 = document.getElementById("listatareas");
+                var enlace = document.getElementById("enlace");
+
+
+          /*MOSTRAR VALORES ATRIBUTOS:
+                 *  -Podemos mostrar los datos del atributo de dos maneras:
+                       -Directamente
+                       -Por metodo getAttribute("nombreAributo");
+                      RECUERDA!!!Si el atributo NO  exite, nos devuelve null
+                 */
+
+            //Directamente
+                // alert("Resultado mostrando el atributo directament\n " + elemento1.id + "\nMuestro el valor del atributo. Muestra forma absoluta");//(?)
+
+            //Por metodo getAttribute("nombreAributo");
+                // alert("Resultado para getAttribute\n " + enlace.getAttribute("href") + "\nMuestra el valor del atributo. Muestra de forma literal");//(?)
+
+
+          /*MODIFICAR VALORES ATRIBUTOS
+                 * -Podemos hacerlo de dos maneras:
+                     -Directamente
+                     -Por metodo setAttribute("nomobreAtributo","valor");   
+                 */
+                
+                //Directamente:
+                
+                //enlace.title = "Titulo cambiado directamente";
+
+                //Por metodo setAttribute():
+                
+                //  enlace.setAttribute("href", "http://www.google.com");//(?)Ponemos http:// para enlazar al exterior
+                //  enlace.setAttribute("href", "www.google.com");//(?)//De esta manera pone ruta absoluta desde nuestro servidor
+
+
+           /*CREACION DE ATRIBUTOS
+                   -De manera directa (nodo-attributo)
+                   -mediante createAttribute RECUERDA!!! de esta manera para crear un atributo sin ningun valor
+                   -Por setAttribute("atributo","valor")
+                 */
+                
+                //Directamente:
+                
+                // enlace.title="titulo creado";//Si el atributo ya existe, le cambia
+
+                //Por metodo createAttribute(Puedo crear atributos sin valor asi:
+                  
+                //var atributo = document.createAttribute("atributo");//Creo el atributo que estara bacio
+                //enlace.audio.setAttributeNode(atributo);//Le añado el atributo creado
+                
+               
+               //Por metodo setAttribute()
+               
+               // enlace.setAttribute("id","valorid");
+
+
+                /*BORRAR UN ATRIBUTO:
+                            * -Usamos el metodo remveAttribute("nombreAtributo");
+                              -Borrando el nodo del atributo
+                              -Podemos poner tambien el atributo como vacio(No le borramos pero le dejamos sin valor)
+                         */
+                        
+                //enlace.removeAttribute("title");
+
+                /*Otra forma: obtengo el nodo del atributo y borro ese nodo
+                            var attr = elmnt.getAttributeNode("href");         // Obtengo el atributo del elemento <a>
+                            elmnt.removeAttributeNode(attr);                   // Borro el atributo abtenido <a>
+                         */
+
+
+             
+                /*ATRIBUTO CLASS
+                             -El atributo class se trata de forma especial
+                             RECUERDA!!! Para trabajar con el atributo class se usa la palabra className (class es palabra reservada de JS)
+                        */
+                
+                /*CREAR MODIFICAR CLASES: 
+                           -Directamente
+        
+                           -Por metodos:
+        
+                           -classList.add("valorAtributo", "2valorAtributos); RECUERDA!!! Admite varios parametros
+                                    -Añade la clase y el atributo/os
+                                    -Si la clase ya exite. No añade
+        
+                           -classList.toggle.("valorAtributo")    -RECUERDA!!! Solo añade o borra una clase(solo admite un parametro)
+                                    -Si la clase NO existe. la añade
+                                    -Si la clase SI exist. La borra
+                          */
+                         
+                //Directamente:
+                
+                   // enlace.className="valorAtributo";// RECUERDA!!! Para class usar className Si la clase exiSte la cambiamos asi
+                    
+                //Por metodos:
+                
+                   //enlace.classList.add("claseAñadida","otraClase"); //Si la clase exite añadiriamos clases nuevas-------------------------------------------
+                   //enlace.classList.toggle("claseNuevo") //Si ya existiria la borraria RECUERDA!!!Sirve tambien para borrar
+
+
+
+                /*BORRAR CLASES
+                            -Directamente
+                            -Por metodos:
+                                -classList.remove("nombreClase" ,"otraClase");
+                                -classList.toggle("nombreClase");  RECUERDA!!! Solo si esta clase ya existe
+                         */
+                 
+                 
+                 //Directamente:
+                 
+                    // enlace.className="";//Dejamos la clase totalmente vacia
+                
+                //Por metodos:
+                
+                    // enlace.classList.remove("nombreClase");RECUERDA!!! Puedo borrar varias clases de golpe
+                    // enlace.classList.toggle("nombreClase");RECUERDA!!! Sirve tambien para crear
+               
+                /*MOSTRAR VALOR CLASE  
+                            -Capturamos los elementos. RECUERDA!!! Capturamos todos por lo que tendremos un array
+                            -Lo hacemos de forma directa
+                         */
+                
+                // alert(parrafos[0].className);
+                // alert(parrafos[0].getAttribute("className"));//De esta forma no me vale?¿?¿
+
+            }
+
+            window.onload = modificacionAtributos;
+
+        </script>
+    </head>
+
+    <body>
+        <div class="divprimero">
+            <h2>Cosas para hacer (Hermano ANTERIOR de ol)</h2>
+            <ol id="listatareas" type="lista">
+                <li>Texto de li 1 (hijo de ol)</li>
+                <li>Texto de li 2 (hijo de ol)</li>
+                <!--Comentario de prueba-->
+                <li>Texto de li 3 (hijo de ol)</li>     
+            </ol>
+            <p id="notasLista">Texto del parrafo (hermano POSTERIOR de ol)</p> 
+        </div>    
+        <div id="divsegundo">
+            <a id="enlace" href="www.prueba.com" title="Titulo original" class="original">Enlace</a>
+        </div>
+
+        <!--div especial para probar el atributo class-->
+        <div>
+
+            <p id="parra" class="clase">Texto parrafo 1</p>
+            <p class="clase">Texto parrafo 2</p>
+            <p class="clase">Texto parrafo 3</p>
+            <p class="clase">Texto parrafo 4</p>
+            <p class="clase">Texto parrafo 5</p>
+
+        </div>
+    </body>
+</html>

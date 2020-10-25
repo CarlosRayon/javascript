@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            
+            /* Creacion y eliminacion de elementos:
+                     RECUERDA!!!Para ver los cambios usamos el depurador del navegador(elements) NO se ven si vemos el codigo fuente de la pagina.
+                   */
+
+            /* CREACION DE ELEMENTOS (RECUERDA!!! EN LIBRERIA TENEMOS FUNCION QUE HACE ESTO)
+                          Pasos:
+                           -Creo el elemento con createElement()
+                           -Creo el contenido del elemento textNode()
+                           -Añado el contenido al elemento con appendChild()
+                           -Añado el elemento donde quiera con appendChild()
+                           
+                           RECUERDA!!! createElement() pertenece al objeto document
+                           RECUERDA!!! createTextNode() pertenece al objeto document
+                           RECUERDA!!! appendChild() pertenece a cualquier elemento de DOM
+                           RECUERDA!!! appendChild() añade el elemento como nodo hijo
+                           RECUERDA!!! Podemos insertar ANTES de un elemento hijo en concreto con insertBefore(elementoInsertar,elementoDondeInsertarAntes)(?)           
+                   */
+
+            window.addEventListener("load", cargarPagina2);
+
+            //EJEMPLO BASICO
+            function cargarPagina()
+            {
+                var parrafo = document.createElement("p");//Creo elemento <p>
+
+                var texto = document.createTextNode("Este es otro parrafo");//Creo contenido elemento
+
+                parrafo.appendChild(texto);//Añado el contenido al elemento
+
+                document.body.appendChild(parrafo);//Añado el elemento a donde quiera(otro elemento)
+
+            }
+            ;
+
+
+            function cargarPagina2()
+            {
+                var parrafo = document.createElement("p");//Creo el elemento
+                
+                var texto = document.createTextNode("Contenido para el nuevo elemento");//Creo el contenido para nuevo elemento
+                
+                parrafo.appendChild(texto);//Añado el contenido al nuevo elemento
+                
+                var elementoDondeAñadir = document.getElementById("capa1");//Capturo el elemento donde quiere añadir el nuevo elemento
+                
+                elementoDondeAñadir.appendChild(parrafo);//Añado el nuevo elemento 
+
+                //parrafo.parentNode.removeChild(parrafo);//Ejemplo de borrado llamado al padre
+            }
+
+            /* ELIMINACION DE ELEMENTO
+                        -usamos removeChild()
+                        -Capturo el elemento que quiero borrar
+                        -Capturo elemento donde lo quiero borrar
+                        -Lo borro con removeChild()
+                   */
+                  
+                  
+            /* Basico
+    
+                        var elementoQueQuieroBorrar = document.getElementById("id");//Capturo el elemento que quiero borrar   
+                        var elementoDondeBorrar = document.getElementById("id");//Capturo el elemento donde quiero borrar algo
+                        elementoDondeBorrar.removeChild(elementoBorrar);
+
+                     Eliminar llamando al padre
+    
+                        var elementoBorrar = document.getElementById("id");//Capturo el elemento que quiero borrar
+                        elementoBorrar.parentNode.removeChild(elementoBorrar);
+             
+                     En una funcion
+    
+                        function borrarElemento(elementoBorrar)//Le puedo pasar un elemento a borrar ya capturado
+                        {
+                        //... o lo puedo captura var elementoQueQuieroBorrar=document.getElementsByTagName();//Capturo el elemento que quiero borrar  
+                        var elementoDondeBorrar = document.getElementById("capa1");//Capturo el elemento donde quiero borrar algo
+                        elementoDondeBorrar.removeChild(elementoBorrar);
+                        }
+                        ;
+    
+                    //Eliminar todos los nodos hijos
+    
+                        var a=document.getElementById(a);
+                        while(a.hasChildNodes())
+                        a.removeChild(a.firstChild);
+
+                   */
+
+            /* INSERTAR ANTES DE UN NODO EN CONCRETO (?)
+             
+                        insertBefore(elementoInsertar,elementoDondeInsertarAntes)(?)
+                        var newItem = document.createElement("LI");       // Create a <li> node
+                        var textnode = document.createTextNode("Water");  // Create a text node
+                        newItem.appendChild(textnode);                    // Append the text to <li>
+
+                        var list = document.getElementById("myList");    // Get the <ul> element to insert a new node
+                        list.insertBefore(newItem, list.childNodes[0]);  // Insert <li> before the first child of <ul>
+
+                   */
+
+        </script>
+    </head>
+    <body>
+        <div id="capa1">Parrafo original del div con id=capa1</div>
+    </body>
+</html>

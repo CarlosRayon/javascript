@@ -1,0 +1,112 @@
+@font-face{
+	font-family: Montserrat;
+	src:url("fonts/Montserrat-Regular.ttf");
+}
+
+*{
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* Capa con la posición actual mostrada en un mapa */
+
+#ubicacion-actual{
+	border:2px solid black;
+	width:80%;
+	padding:20px;
+	margin:0 auto;
+	background-color:#BEBEBE;
+}
+
+#ubicacion-actual .mapa{
+	width:80%;
+	margin:0 auto;
+	height:200px;
+	border:2px solid black;
+}
+
+
+
+/* Estilos relativos al formulario */
+
+#formulario .linea_formulario{
+	margin:15px;
+	width:400px;
+}
+
+#formulario .linea_formulario:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+#formulario .linea_formulario label{
+	float:left;
+	width:30%;
+}
+
+
+#formulario .linea_formulario input[type="text"], 
+#formulario .linea_formulario button
+{
+	float:left;
+	width:60%;
+	padding:2px;
+	
+}
+
+#formulario .botones{
+	margin:0 auto;
+}
+
+#formulario input:focus{
+	border:2px solid black;
+	outline:0px;
+	background-color:#DBDBDB;
+}
+
+
+/* Caja de sugerencias */
+
+#sugerencia{
+	border:2px solid black;
+	width:300px;
+	padding-left:0px;
+	position:absolute;
+        background-color:white;
+}
+
+#sugerencia li{
+	list-style-type:none;
+	padding-left:5px;
+}
+
+#sugerencia li:hover{
+	background-color:#DBDBDB;
+}
+
+
+/* Caja de información */
+
+#informacion{
+	border:2px solid black;
+	width:400px;
+	padding:10px;
+	background-color:#BEBEBE;
+}
+
+.mapa{
+	width:400px;
+	height:200px;
+	border:2px solid black;
+}
+
+/* Visibilidad de elementos */
+
+.oculto{
+	display:none;
+}
+
+.visible{
+	display:block;
+}
+

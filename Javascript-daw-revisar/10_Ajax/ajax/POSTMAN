@@ -1,0 +1,12 @@
+
+Añadir el a chrome el plugin postman (ver video javi Gonzalez DWEC_UD7_2  al final)
+Con postman podemos hacer peticiones al un script php sin tener que crear ningun programa javascript
+
+-Intruciones basicas-
+Ponemos la url donde tenemos nuestro script
+Selecionamos el metodo de peticion get o post
+si pasamos parametros pulsamos en Params y en el nuevo menu se los pasamos
+    Si es por metodo post en body marcar la casilla x-www-forn-yrlconded
+
+
+RECUERDA PASA LA URL DONDE ESTE EL SCRIPT PHP!!!!!!!!!

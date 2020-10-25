@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ver Mapa</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style/css.css" rel="stylesheet" type="text/css"/>
+        <!--Debemos incluir este scrip con la api key que tengamos nosotros. Para sacar apikey mirar googlepais-->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCshS9ej4P98Ga22zyy_mxk3h53iNaT8fM&callback=initMap" <!--Quito callback=initMap para no usar esta funcion-->
+        async defer></script>
+
+        <script src="js/maps.js"></script>
+
+    </head>
+    <body>
+
+        <div id="mapa">
+
+        </div>
+
+        <p>
+            <button id="mostrarmapa">Pulsa para ver tu localizacion</button>
+        </p>
+
+    </body>
+</html>

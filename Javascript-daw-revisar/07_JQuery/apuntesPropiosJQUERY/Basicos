@@ -1,0 +1,19 @@
+Para usar Jquery tenemos varia opciones (mirar download en jquery.com):RECUERDA!!! Incluir antes de script JS
+
+    -Usar el CDN (Incluir en el html un enlace a un servidor externo que tenga la libreria)
+        Ejemplo servidor de google:    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    -Descargar la libreria he incluirla en nuestro proyecto.
+        -La descargamos desde la web ofical (mejor version comprimida)
+        -Creamos en la carpeta js otra carpeta lib y metemos hay la libria
+        -Incluimos la libreria en el html (antes script js)
+
+La sintasis para llamar a jquery es:
+    jquery() 
+    $()    Habitualmente usamos esta
+
+Por convencion cuando tenemos una variable/objeto Jquery ponemos el $ antes del nombre
+
+var $variable=$("#id");

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Formulario</title>
+        <meta charset="UTF-8">
+        <script src="capturar_elementos.js"></script>
+        <script src="No_estudiar.js"></script>
+        <script src="func_valorDatosForm.js"></script>
+        <link href="style/formulario.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h1>Formulario para capturar datos con JS</h1>
+        <div id="principal">
+            <h3>Formulario</h3>
+
+            <form id="formulario" action="#" method="get">
+
+                <div class="linea_formulario limpia">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" data-id="input" />
+                </div>  
+
+                <div class="linea_formulario limpia">
+                    <label for="apellidos" >Apellidos</label>
+                    <input type="text" name="apellidos" id="apellidos" data-id="input"/>
+                </div> 
+
+
+                <div class="linea_formulario limpia">
+                    <label for="fecha_nacimiento">Fecha de nacimiento</label>
+                    <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" data-id="input"  />				
+                </div> 
+
+
+                <div class="linea_formulario limpia">
+                    <label for="dni">DNI</label>
+                    <input type="text" name="dni" id="dni" data-id="input" />
+                </div>
+
+
+                <div class="linea_formulario limpia">
+                    <label for="Email">Email</label>
+                    <input type="text" name="email" id="email" data-id="input" />
+                </div>  
+
+
+                <div class="linea_formulario limpia">	
+                    <label for="password">Contraseña</label>
+                    <input type="password" name="password" id="password" size="10" data-id="input" />
+
+
+                </div>
+                <div class="linea_formulario limpia">	
+                    <label for="password2">Contraseña (repetición)</label>
+                    <input type="password" name="password2" id="password2" size="10" data-id="input" />
+                </div>		
+
+
+                <div class="linea_formulario">
+                    <label for="genero">Género</label>
+                    <div class="botones">
+                        <input type= "radio" name="genero" id="genero_hombre" value="Hombre" checked="checked" data-id="radio"/><span>Hombre</span>
+                        <input type= "radio" name="genero" id="genero_mujer" value="Mujer" data-id="radio"/><span>Mujer</span>
+                    </div>
+
+                </div>
+
+                <div class="linea_formulario limpia">
+                    <input type= "checkbox" name="boletin" id="boletin" value="boletin" data-id="checkbox" />Suscribirme al boletín de novedades		
+                </div>			
+
+                <div class="linea_formulario limpia">
+                    <input type= "checkbox" name="ofertas" id="ofertas" value="ofertas" data-id="checkbox" />Informarme sobre ofertas
+                </div>			
+
+                <div class="linea_formulario limpia">
+                    <label for="favorito" >Producto favorito</label>
+                    <select name="favorito" id="favorito" data-id="select">
+                        <option selected value="none">Elige uno...</option>			
+                        <option value="consolas">Consolas</option>
+                        <option value="pc">PC</option>
+                        <option value="desarrollo">Desarrollo</option>
+                    </select>
+                </div>
+
+
+                <div class="linea_formulario limpia">
+                    <label for="comentario">Comentario</label>
+                    <textarea name="comentario" id="comentario" placeholder="Introduce tu comentario..." data-id="textarea" ></textarea>
+                </div>		
+
+
+                <div class="linea_formulario limpia">	
+                    <input type="button" name="enviar" id="enviar" value="Enviar datos" /> 
+                </div>
+            </form>
+        </div>
+
+        <div id="secundario">
+            <h1>Datos capturados</h1>
+
+            <div id="mensajes">
+
+            </div>
+        </div>
+        ´
+
+        <div class="codigo" id="codigo-input">
+            <h3>CAPTURA DE LOS INPUT-<br> RECUERDA!!! LIB>>>DOM_NATIVO>>>funcion de captura input</h3>
+            <p>
+                Para capturar el valor de los input usamos el atributo value.<br>
+                Aun siendo de types diferentes se capturan igual todos por su value
+            </p>
+            <p>
+            <h2>Codigo JS</h2>
+            var nombre = document.getElementById("nombre").value;<br>
+            var apellidos = document.getElementById("apellidos").value;<br>
+            var fechas = document.getElementById("fecha_nacimiento").value;//RECUERDA La fecha la devuelve con el orden invertido yyyy-mm-dd (LIB>>>DATE_TIEMPOS>>funcion para reconvertir<br>
+            var email = document.getElementById("email").value;<br>
+            var dni = document.getElementById("dni").value;<br>
+            var pass_01 = document.getElementById("password").value;<br>
+            var pass_02 = document.getElementById("password2").value;<br>
+            </p>
+        </div>
+
+        <div class="codigo" id="codigo-radio">
+            <h3>CCAPTURA DE LOS RADIO BUTTON--<br> RECUERDA!!! LIB>>>DOM_NATIVO>>>funcion de captura</h3>
+            <p>
+                Para capturar los radio button usamos: RECUERDA!!! LIB>>>DOM_NATIVO>>>funcion de captura<br>
+                -Capturamos el elemento por name (Los radio tiene el mismo name para poder agruparlos)<br>
+                -Recorremos todos los valores del radio button para encontrar seleccionado<br>
+            </p>
+            <p>
+            <h2>Codigo JS</h2>
+            var radio = document.getElementsByName("genero");<br>
+            var sexo = "";<br>
+            for (var i = 0; i < radio.length; i++)<br>
+            {<br>
+            if (radio[i].checked)sexo = radio[i].value;<br>
+            }<br>
+            </p>
+        </div>
+
+        <div class="codigo" id="codigo-checkbox">
+            <h3>CAPTURA DE LOS CHECKBOX--<br> RECUERDA!!! LIB>>>DOM_NATIVO>>>funcion de captura</h3>
+            <p>
+                -Capturamos el checkBox por id<br>
+                -validamos en un if si esta seleccionado if (campoCheck.checked) (?)<br>
+                -Con .value obtenemos el valor<br>
+                -Con .name su nombre   <br>
+            </p>
+            <p>
+            <h2>Codigo JS</h2>
+            var checkBox_01 = document.getElementById("boletin");<br>
+            LE VALIDAMOS CON IF O TERNARIO<br>
+            ((!checkBox_01.checked) ? "campo vacio" : checkBox_01.value)<br>
+            </p>
+        </div>
+
+        <div class="codigo" id="codigo-select">
+            <h3>CAPTURA DE SELECT/OPTION-<br> RECUERDA!!! LIB>>>DOM_NATIVO>>>funcion de captura</h3>
+            <p>
+                -1º Capturando el select por id (RECOMENDABLE)<br>
+                -2º Capturando el select por id y validando si esta selected el option. Esta manera solo capturamos los option del select deseado<br>
+                -3º Capturando el tagName option //RECUERDAD!!! Si tenemos mas de un select capturamos todos los option de la pagina<br>
+            </p>
+            <p>
+            <h2>Codigo JS</h2>
+            //- 1º Capturamos el select por su id y del array de options capturamos el index del select(RECOMENDABLE)<br>
+            var select = document.getElementById("favorito").options[document.getElementById("favorito").selectedIndex].value;<br>
+            <br>
+            2º Capturando el select por id y validando si esta selected el option<br>
+            <br>
+            var select = document.getElementById("favorito");<br>
+            for (var i = 0; i < select.options.length; i++) {<br>
+            if (select.options[i].selected) {<br>
+            console.log(select.options[i].innerText);<br>
+            }<br>
+            }<br>
+            <br>
+            3º Capturamos el tagName option y con bucle y un if mostramos el option que este selected<br> 
+            <br>
+            RECUERDA!!! Esta opcion coge TODOS lo checkbox de la web. cuidado con tener mas de 1 <br>
+            <br>
+            var options = document.getElementsByTagName("option");<br>
+            var options = document.getElementsByTagName("option");<br>
+            for (var i = 0; i < options.length; i++) {<br>
+            if (options[i].selected) {<br>
+            console.log(options[i].innerText);<br>
+            }<br>
+            }<br>
+            </p>
+        </div>
+        <div class="codigo" id="codigo-textarea">
+            <h3>CAPTURAR TEXT AREA-<br>RECUERDA!!! LIB>>>DOM_NATIVO>>>funcion de captura(misma que input)</h3>
+            <p>
+                -Para capturar un textarea lo hacemos exactamente igual que cualquier input<br>
+            </p>
+            <p>
+            <h2>Codigo JS</h2>
+            var textArea=document.getElementById("comentario").value;
+        </p>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+ *************************MODIFICAR DATOS************
+
+ document.getElementById(obj).value=String;                  Cambiar un input a vacio ""
+ document.getElementById(obj).placeholder=String;            Cambiar el placeholder
+ document.getElementById(obj).innerHTML = "String";          Cambiar valor(Poner algo en un elemento)
+ 
+ *********************CAPTURA DE DATOS***************
+ var dato = document.getElementById(obj1).value;             Obtener el value(obtener dato introduccido por usuario)
+ 
+ ************************CAMBIAR EL ESTILO (style.propiedad CSS)********************
+ document.getElementById(obj).style.color = "red";                                   Cambiar color(podemos pasar codigo #8D3030)
+ document.getElementById(obj).style.display = "block";                               Aparecer Bloque
+ document.getElementById(obj).style.display = "none";                                Desaparecer Bloque
+ document.getElementsByClassName(obj).style.backgroundColor="rgba(100,100,0,0.2)";    Cambiar color fondo
+ document.getElementsByClassName(obj).style.borderColor="blue";                      Cambiar color del borde
+ document.getElementById(obj).style.fontSize="20px";                                Cambiar tamaño de la letra
+ document.getElementById(obj).style.borderColor="red";                                Cambiar tamaño de la letra
+ 
+ **********************OTRAS UTILES*********************
+ document.getElementById(obj).readOnly = true;||false   Poner un elemento no editable(Cuidad  con la O que tiene que ser mayuscula)
+ document.getElementById(obj).value=document.getElementById(obje).value.toUpperCase();  Para poner en mayusculas toLowerCase() para minusculas
+ document.getElementById(obj).disabled=false  Para hacer NO editable  "" Para volver a hacer editable

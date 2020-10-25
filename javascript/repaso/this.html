@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>funciones</title>
+	</head>
+	<body>
+		<button id="normal">Pulsame (normal)</button>
+		<button id="flecha">Pulsame (Flecha)</button>
+
+		<form action="" method="POST" id="formNormal">
+			<input type="text" name="nombre" id="nombre" />
+			<button type="submit">Submit Normal</button>
+		</form>
+		<form action="" method="POST" id="formFlecha">
+			<input type="text" name="nombre" id="nombre" />
+			<button type="submit">Submit Flecha</button>
+		</form>
+
+		<script>
+
+
+			/* autoinvocadas */
+			(function () {
+				console.log('autoinvocada normal', this);
+			})();
+
+			(() => {
+				console.log('autoinvocada flecha', this);
+			})();
+
+			/* En variables */
+
+			const normal = function () {
+				const a = 'hello';
+				console.log('En variable normal', this);
+				console.log(arguments);
+			};
+
+			normal();
+
+			/* En varible flecha */
+			const flecha = () => {
+				console.log('En varible flecha', this);
+				// console.log(arguments) // En flecha no existe
+			};
+			flecha();
+
+			/* En objeto normal */
+			const objNormal = {
+				name: 'Funcion normal',
+				fun: function () {
+					console.log('En objeto normal', this);
+				},
+			};
+			objNormal.fun();
+
+			/* En objeto flecha */
+			const objFlecha = {
+				name: 'Funcion flecha',
+				fun: () => {
+					console.log('En objeto flecha', this);
+				},
+			};
+			objFlecha.fun();
+
+			/* Varios normal */
+			const variosNormal = {
+				name: 'fuera',
+				fun: function () {
+					const otro = {
+						name: 'dentro',
+						funDentro: function () {
+							console.log('Dentro normal', this);
+						},
+					};
+
+					otro.funDentro();
+
+					console.log('Fuera normal', this);
+				},
+			};
+
+			variosNormal.fun();
+
+			/* Varios flecha */
+			const variosFlecha = {
+				name: 'fuera',
+				fun: () => {
+					const otro = {
+						name: 'dentro',
+						funDentro: () => {
+							console.log('Dentro flecha', this);
+						},
+					};
+
+					otro.funDentro();
+
+					console.log('Fuera flecha', this);
+				},
+			};
+			variosFlecha.fun();
+
+			document.querySelector('#normal').addEventListener('click', function (event) {
+				console.log('This addevent normal', this);
+				console.log('Event normal', event);
+				console.log('Event target normal', event.target);
+			});
+
+			document.querySelector('#flecha').addEventListener('click', (event) => {
+				console.log('This addevent Flecha', this);
+				console.log('Event flecha', event);
+				console.log('Event target flecha', event.target);
+			});
+
+			document.querySelector('#formNormal').addEventListener('submit', function (event) {
+				event.preventDefault();
+				console.log(event);
+				console.log(this);
+				// console.log(this.querySelector('input[type="text"')); // ok
+			});
+			document.querySelector('#formFlecha').addEventListener('submit', (event) => {
+				event.preventDefault();
+				console.log(event);
+				console.log(this);
+				// console.log(this.querySelector('input[type="text"')); // Error
+			});
+
+		</script>
+	</body>
+</html>

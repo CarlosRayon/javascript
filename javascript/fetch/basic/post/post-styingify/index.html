@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch (ir a buscar)basic</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-group {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Fetch en Javascript</h1>
+    </header>
+
+
+    <main>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="form-group">
+                <button id="btn-send">Send</button>
+            </div>
+        </form>
+    </main>
+
+
+    <script>
+        const btnSsend = document.querySelector('#btn-send');
+
+        btnSsend.addEventListener('click', function(e) {
+
+            const name = document.querySelector('#name').value
+            const email = document.querySelector('#email').value
+
+            e.preventDefault();
+
+
+            /* Mandamos por post un objeto como string */
+
+            const content = { /* opcional */
+                'name': name,
+                'email': email
+            }
+
+            fetch('script.php', {
+                method: 'post',
+                headers: { // Importante
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(content)
+
+            }).then(
+                /* Tipo respuesta esperada */
+                response => response.text() // text
+                // response => response.json() // json
+                // response => response.blob() // img
+                // response => response.formData()
+                // response => response.arrayBuffer()
+
+            ).then(
+                dataResponse => {
+                    console.log(dataResponse)
+                }
+            ).catch(
+                error => {
+                    console.log('Error: ' + error)
+                }
+            )
+
+        })
+    </script>
+
+
+</body>
+
+</html>

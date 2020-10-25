@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejercicio 2- Repaso 2EV - Buscador de vuelos</title>
+        <link rel="stylesheet" href="style/estilos.css"/>
+	<!-- TODO: Añadir llamada a los scripts necesarios --> 
+
+	</head>
+
+	<body>
+		<h1>Buscador de vuelos</h1>
+		<div id="informacion-posicion"></div>
+	
+		<form id="formulario"> 
+		<div class="linea_formulario">
+			<label for="origen" >Origen</label>
+			<input type="text" name="origen" id="origen" autocomplete="off"  />
+			<input type="button" name="busca-vuelo" id="busca-vuelos" value="Buscar" />					
+			
+		</div>  
+		
+		<div id="sugerencia-origen" class="oculto"> </div>
+		<div id="informacion-destinos" class="oculto"> </div>
+					
+		</form>
+		
+              
+                <div id="informacion-vuelo" class="oculto"> </div>
+		
+
+		
+	</body>
+</html>

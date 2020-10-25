@@ -1,0 +1,88 @@
+*{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+#principal{
+    background: #F2F2F2;
+    padding: 30px;
+    margin: 30px;
+    float: left;
+    border: 2px solid;
+    height: 800px;
+    width: 40%;
+}
+
+#secundario{
+    background: #F2F2F2;
+    padding: 30px;
+    margin: 30px;
+    float: right;
+    border: 2px solid;
+    height: 300px;
+    width: 45%;
+}
+.limpia:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#formulario .linea_formulario{
+    margin:15px;
+    width:400px;
+}
+
+#formulario .linea_formulario label{
+    float:left;
+    width:30%;
+}
+
+#formulario .linea_formulario input[type="text"], 
+#formulario .linea_formulario input[type="password"], 
+#formulario .linea_formulario input[type="submit"],
+#formulario .linea_formulario select,
+#formulario .linea_formulario textarea,
+#formulario .linea_formulario button
+{
+    float:left;
+    width:60%;
+    padding:2px;
+
+}
+
+#formulario .botones{
+    margin:0 auto;
+}
+
+#formulario input:focus, #formulario #comentario:focus {
+    border:2px solid black;
+    outline:0px;
+    background-color:#DBDBDB;
+}
+
+
+#formulario select{
+    border:2px solid grey;
+    outline:0px;
+    background-color:#F2F2F2;
+}
+
+#formulario #comentario{
+    height:100px;
+    resize:none;
+}
+
+.codigo{
+    width: 900px;
+    padding: 10px;
+    border: 4px solid;
+    background-color: #DBDBDB;
+    display: block;
+    position: absolute;
+    top: 500px;
+    right: 100px;
+    display: none;
+}

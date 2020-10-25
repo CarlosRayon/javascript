@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div></div>
+
+    <script>
+        
+        //Creo una clase Domesticos
+        function Domesticos() {
+            //Propiedades del objeto
+            this.animal = "";
+            this.nombre = "";
+
+            //Métodos para el objeto
+            this.setAnimal = function (nuevoAnimal) {
+                this.animal = nuevoAnimal;
+            };
+
+            this.setNombre = function (nuevoNombre) {
+                this.nombre = nuevoNombre;
+            };
+        };
+
+        //Creo un objeto del tipo Domesticos
+        var miGato = new Domesticos();
+        //Defino las propiedades mediante los métodos
+        miGato.setAnimal("felino");
+        miGato.setNombre("Spoty");
+
+        /*Se podrían definir directamente en la propiedad
+         * Pero no seria correcto por tema de la encapsulacion etc
+         * miGato.animal="felino";
+         * miGato.nombre="Spoty";
+         */
+
+        //APLICAMOS LA HERENCIA.
+        //Creo una nueva clase llamada Perro que herede las propiedades y métodos de la clase Domesticos
+        Perro.prototype = new Domesticos();
+
+        function Perro() {
+            //Añadimos propiedades y métodos nuevos y específicos para este objeto
+            this.raza = "";
+            this.setRaza = function (tipoRaza) {
+                this.raza = tipoRaza;
+            };
+
+            //Agregamos una función que usara la propiedad "nombre" heredada de la clase Domesticos
+            this.mostrarInfo = function () {
+                alert(this.nombre + " es un " + this.raza);
+            };
+        }
+
+        //instanciamos un objeto de tipo Perro
+        var miPerro = new Perro();
+        //Usamos metodo propio de la clase Perro..
+        miPerro.setRaza("Cooker");
+        //Usamos heredado de la clase Domesticos
+        miPerro.setNombre("Slot");
+
+        document.getElementsByTagName("div")[0].innerHTML = miGato.nombre;
+    </script>
+    <input type="button" value="MostrarDatos" onclick="miPerro.mostrarInfo()">
+
+
+
+</body>
+
+</html>

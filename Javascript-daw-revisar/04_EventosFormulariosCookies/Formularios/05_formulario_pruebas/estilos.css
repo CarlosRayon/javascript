@@ -1,0 +1,17 @@
+#contenedor{
+    width: 50%;
+    height: 500px;;
+    border: 2px solid;
+    margin: 10px auto;
+}
+
+.datos{
+    margin: 10px;
+}
+.selector{
+    float: left;
+    margin: 10px;
+}
+.enviar{
+    clear: both;
+}

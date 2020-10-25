@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+FORMAS CAPTURAR ELEMENTOS DEL DOOM
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <div id="id">
+            <p class="clase">parrafo con clase numero 1</p> 
+            <p class="clase">parrafo con clase numero 2</p> 
+            <ul>
+                <li>lista 1</li>
+                <li>lista 2</li>
+                <li id="yo">lista 3</li>
+                <li>lista 4</li>
+            </ul>
+            <p name="nombre">parrafo con name</p>
+ 
+        </div>
+        
+        <script>
+            
+            var porID=document.getElementById("id");
+            var porClase=document.getElementsByClassName("clase");//Devuelve array
+            var porEtiqueta=document.getElementsByTagName("li");//Devuelve array
+            var porName  =document.getElementsByName("nombre");//Devuelve array
+           // var porCSS =document.querySelector(".clase");//Devuelve el primer elemento que encuentre con este CSS
+            var porCSS =document.querySelector("#id");//Devuelve el primer elemento que encuentre con este CSS
+            var porCSSall =document.querySelectorAll(".clase");//Devuelve array con todos elemento que encuentre con este CSS
+                   
+            alert(porID.id);
+            alert(porClase[0].className);//RECUERDA!!! Es un array y la clase se trata como className
+            alert(porEtiqueta[0].innerHTML);
+            alert(porEtiqueta["yo"].innerHTML);//RECUERDA!!! Si en la lista hay algun id le podemos capturar por este id. 
+            alert(porName[0].innerHTML);
+            alert(porCSS.innerHTML);
+            alert(porCSSall[1].innerHTML);
+            
+            
+            
+        </script>
+    </body>
+</html>

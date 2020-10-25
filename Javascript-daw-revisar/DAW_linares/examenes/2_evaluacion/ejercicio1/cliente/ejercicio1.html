@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>DWEC 2EV - Examen [Ejercicio 1]</title>
+        <meta charset="UTF-8">
+        <link rel="icon" href="#" />
+        <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="js/funcionesDom.js" type="text/javascript"></script>
+        <script src="js/varios.js" type="text/javascript"></script>
+        <script src="js/ejercicio1.js" type="text/javascript"></script>
+    </head>
+    <body>
+       <h1>Gestión de Billetes AGL</h1>
+        <div id="contenedor"> 
+
+            <div id="selectores">
+                <div class="selector">
+                        <label for="origen">Origen</label>
+                        <select name="origen" id="origen">
+                                <option selected value="none">Elige uno...</option>			
+                                <option  value="Santander">Santander</option>
+                                <option value="Madrid">Madrid</option>
+                                <option value="Barcelona">Barcelona</option>
+                                <option value="Oviedo">Oviedo</option>
+                        </select>						
+                 </div>
+                 <div class="selector">
+                        <label for="destino">Destino</label>
+                        <select name="destino" id="destino">
+                                <option selected value="none">Elige uno...</option>			
+                                <option  value="Santander">Santander</option>
+                                <option value="Madrid">Madrid</option>
+                                <option value="Barcelona">Barcelona</option>
+                                <option value="Oviedo">Oviedo</option>
+                        </select>						
+                 </div>
+            </div>
+            <div id="info-buses">  
+                <!-- Aquí se mostrarán los autobuses que cubren cada ruta -->
+                
+            </div>
+            
+            <div id="asientos">
+                <div id="asientos-autobus">
+                    <!-- Aquí se mostrará el gráfico con las plazas -->
+                   
+                    <!--
+                    <div id="dibujo-autobus">               
+                        <div class="fila">
+                            <div class=" asiento libre"> </div>
+                            <div class=" asiento libre"> </div>
+                            <div class=" asiento libre"> </div>
+                            <div class=" asiento ocupado"> </div>
+                        </div>
+                        
+                    </div>
+                    -->
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

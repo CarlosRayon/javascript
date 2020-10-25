@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intersecion Observer</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        
+        .box {
+            height: 200px;
+            width: 200px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+        }
+        
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Api Intersecion Observer</h1>
+    </header>
+
+    <main>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <video width="300px" src="http://techslides.com/demos/sample-videos/small.mp4" id="video"></video>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+
+    </main>
+
+    <script>
+        const video = document.querySelector('#video');
+
+        video.addEventListener('play', () => {
+            console.log('Se reproduce video');
+
+        })
+        video.addEventListener('pause', () => {
+            console.log('Se pausa video');
+
+        })
+        const options = {
+            //root,
+            rootMargin: '0px 0px 0px 0px', // margens que aplica
+            threshold: 1 // [0.5 , 1] Porcentaje visibilidad
+        }
+
+        function callback(entries, observer) {
+            console.log('Se llama callback');
+
+            if (entries[0].isIntersecting) {
+                video.play()
+            } else {
+                video.pause()
+            }
+
+        }
+
+        const observer = new IntersectionObserver(callback, options);
+        observer.observe(video);
+    </script>
+
+</body>
+
+</html>

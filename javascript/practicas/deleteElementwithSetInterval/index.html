@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+
+		<link rel="stylesheet" href="style.css" />
+		<title>Delete element</title>
+	</head>
+	<body>
+		<header class="header">
+			<h1 class="header__h1">delete element</h1>
+		</header>
+
+		<main class="main">
+			<div class="container">
+				<ul class="list">
+					<li id="element-1" class="list__element">
+						list 1 <button class="btn btn--warning btn--ml" data-li="element-1">DELETE</button>
+					</li>
+					<li id="element-2" class="list__element">
+						list 2 <button class="btn btn--warning btn--ml" data-li="element-2">DELETE</button>
+					</li>
+					<li id="element-3" class="list__element">
+						list 3 <button class="btn btn--warning btn--ml" data-li="element-3">DELETE</button>
+					</li>
+					<li id="element-4" class="list__element">
+						list 4 <button class="btn btn--warning btn--ml" data-li="element-4">DELETE</button>
+					</li>
+					<li id="element-5" class="list__element">
+						list 5 <button class="btn btn--warning btn--ml" data-li="element-5">DELETE</button>
+					</li>
+				</ul>
+			</div>
+		</main>
+
+		<div id="alertDelete" class="alert alert--positionRight hiddenElement">
+			<i id="iconDelete" class="far fa-times-circle alert__close"></i><span class="alert__text">DELETE ??</span>
+			<button id="btnDelete" class="btn btn--danger">DELETE</button>
+		</div>
+		<br />
+		<div id="alertReverse" class="alert alert--positionLeft hiddenElement">
+			<span class="alert__text">Time to delete</span> <span  class="alert__time">5</span>
+			<button class="btn btn--warning">REVERSE</button></i>
+        </div>
+
+        <script src="main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="texto">
+        <h1>AJAX</h1>
+        <button id="cambiaContenido">Cambia el contenido</button>
+    </div>
+
+    <script>
+        document.getElementById("cambiaContenido").addEventListener("click", cambiaContenido);
+
+        function cambiaContenido() {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("texto").innerHTML = this.responseText;
+                       /*           
+                     Nos dice el estado del objeto XMLHttpRequest. Este estado puede ser:
+                     0: solicitud no inicializada
+                     1: conexión del servidor establecida
+                     2: solicitud recibida
+                     3: solicitud de procesamiento
+                     4: solicitud finalizada y la respuesta está lista -- Este valor nos interesa para saber que todo esta bien
+                     */
+                    console.log(this.readyState);
+
+                    /*No dice el estado que tiene el servidor:  
+                     200: "OK" ---Este nos interesa ya que nos dice que esta ok el servidor
+                     403: "Prohibido"
+                     404 No encontrado"   
+                     */
+                    console.log(this.status);
+                    
+                    /*Devuelve el estado del texto (por ejemplo, "No encontrado" o "Aceptar")*/
+                    console.log(this.statusText);
+                  
+                }
+            };
+            /* .open: especifica la solicitud
+             - GET/POST.
+             - Archivo: txt, php, xml, json, etc.
+             - true/false: método de envío true es metodo asincrono. false sincrono.
+         
+         */
+            xhr.open("GET", "holamundo.txt", true);
+            /* .send: envía la solicitud al servidor.
+                Si utilizamos POST debemos pasar los datos por parámetro */
+            xhr.send();
+        }
+    </script>
+
+</body>
+
+</html>

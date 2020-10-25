@@ -1,0 +1,21 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-feb-2018, 19:41:41
+    Author     : karlo
+*/
+
+
+div{
+    width: 400px;
+    height: 400px;
+    border: 2px solid black;
+    margin: 50px;
+}
+#caja1{
+    background-color: red;
+}
+

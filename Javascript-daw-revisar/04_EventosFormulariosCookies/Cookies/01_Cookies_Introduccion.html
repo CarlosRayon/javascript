@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cookies</title>
+
+</head>
+
+<body>
+    <!-- ¿Qué son las Cookies?
+         - Datos almacenados en nuestro ordenador en pequeños archivos de texto.
+         - Recuerdan la información de un usuario aunque se cierre el navegador o se desconecte del servidor.
+         - Podemos guardar el nombre de un visitante de la página, el número de veces que ha entrado, etc.
+         - Se guardan en forma de pares "nombre=valor":    usuario = Ada Lovelace
+    -->
+    <script>
+         /*La informacion se encuentra en document.cookie (<String> nombre=valor)
+             Atributos de la cookie
+            -cookieName         Nombre visible de la cookie
+            -cookie.value       El valor visible quetiene la cookie
+            -domain<opcional>   Indica el dominio de la cookie.
+                                Si no se especifica su valor es el dominio de la pagina que configura la cookie
+            -path<opcional>     Limita el uso de la cookie a paginas que se encuentre en la ruta
+            -secure<opciona>    Se usa raramente. Indica que navegador tiene que usar seguridad SSL
+            -expires            Tiempo que durara la cookie. Si no se configura, la cookie dura hasta cierre navegador  Tiene que estar en formato UTC
+    
+        */
+       
+        //Crear una cookie: nombre; fecha de expiracion -UTC-; edad máxima en segundos; ruta; dominio
+        //document.cookie ="usuario = Ada Lovelace; expires=Thu, 16 Nov 2017 12:00:00 UTC; path
+        //max-age=2000;
+        //
+        document.cookie = "usuario = Ada Lovelace;";//durara el tiempo que dure abierto el navegador
+        document.cookie = "sexo = mujer;";
+        //Si modificamos la cookie CUIDO. Tiene que tener los mismo parametros de formato
+        
+        
+        
+        //Leer una cookie
+        var miCookie = document.cookie;
+        alert(miCookie);
+        
+        //Modificar una cookie
+        document.cookie = "sexo = hombre;";
+        alert(document.cookie);
+        
+        //Borrar una cookie poner fecha de expiracion anterior a la de creacion
+        //document.cookie = "usuario=; expires=Thu, 01 Jan 1970 00:00:01 GMT";
+        //document.cookie = "sexo=; expires=Thu, 01 Jan 1970 00:00:01 GMT";
+        alert(document.cookie);        
+    </script>
+    
+</body>
+
+</html>

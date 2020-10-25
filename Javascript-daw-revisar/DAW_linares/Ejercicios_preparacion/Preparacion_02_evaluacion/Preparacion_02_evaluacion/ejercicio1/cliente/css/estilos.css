@@ -1,0 +1,32 @@
+
+body { 
+	background-image:url("images/space.jpg") 
+}
+			
+.planeta { 
+	position: absolute;
+	left: 0px; top: 0px; 
+	height:40px; 
+	width:40px;
+}
+
+/* Todos los planetas son de 40 x 40 salvo los siguientes: */	
+	
+.sol { height:60px; width:60px;}
+.mercurio {height:20px; width:20px;}
+.marte {height:30px; width:30px;}
+.jupiter {height:60px; width:60px;}
+.saturno {height:80px; width:80px;}
+			
+#info {
+	position:absolute;
+	top:0px;
+	left:0px;
+	background-color:white;
+	padding:30px 10px;
+	width:200px;
+}
+
+#info h2 {
+	color:blue;
+}
