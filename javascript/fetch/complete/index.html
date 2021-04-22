@@ -1,94 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<title>Fetch (ir a buscar)basic</title>
-		<style>
-			body {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-			}
 
-			.form-group {
-				margin-top: 10px;
-			}
-		</style>
-	</head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fetch (ir a buscar)basic</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-	<body>
-		<header>
-			<h1>Fetch en Javascript</h1>
-		</header>
+        .form-group {
+            margin-top: 10px;
+        }
+    </style>
+</head>
 
-		<main>
-			<form id="form">
-				<div class="form-group">
-					<label for="name">Name</label>
-					<input type="text" name="name" id="name" />
-				</div>
+<body>
+    <header>
+        <h1>Fetch en Javascript</h1>
+    </header>
 
-				<div class="form-group">
-					<label for="email">email</label>
-					<input type="email" name="email" id="email" />
-				</div>
-				<div class="form-group">
-					<button id="btn-send">Send</button>
-				</div>
-			</form>
-		</main>
+    <main>
+        <form id="form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" />
+            </div>
 
-		<footer>
-			<a href="https://desarrolloweb.com/articulos/fetch-post-ajax-javascript.html" target="_blank">Mas info</a>
-		</footer>
+            <div class="form-group">
+                <label for="email">email</label>
+                <input type="email" name="email" id="email" />
+            </div>
+            <div class="form-group">
+                <button id="btn-send">Send</button>
+            </div>
+        </form>
+    </main>
 
-		<script>
-			const form = document.querySelector('#form');
+    <footer>
+        <a href="https://desarrolloweb.com/articulos/fetch-post-ajax-javascript.html" target="_blank">Mas info</a>
+    </footer>
 
-			form.addEventListener('submit', function (e) {
-				e.preventDefault();
+    <script>
+        const form = document.querySelector('#form');
 
-                const formData = new FormData(form);
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-				/* Show data FormData */
-				// for (var pair of formData.entries()) {
-				// 	console.log(pair[0] + ', ' + pair[1]);
-				// }
+            const formData = new FormData(form);
 
-				fetch('script.php', {
-					method: 'post',
-					body: formData,
-				})
-					.then(function (response) {
-						if (response.ok) {
-							return response.json();
-						} else {
-							throw 'Error en la llamada Ajax';
-						}
-					})
-					.then(function (data) {
-						if (!data.status) {
-							switch (data.code) {
-								case 'ok':
-									alert(data.msg);
-									break;
-								case 'ko':
-									alert(data.msg);
-									break;
-								default:
-									break;
-							}
-						} else {
-							//form.submit();
-							console.log('Send form');
-						}
-					})
-					.catch(function (error) {
-						console.log('Catch error: ' + error);
-					});
-			});
-		</script>
-	</body>
+            /* Show data FormData */
+            // for (var pair of formData.entries()) {
+            // 	console.log(pair[0] + ', ' + pair[1]);
+            // }
+
+            fetch('script.php', {
+                method: 'post',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: formData, // or {'datos':123}
+            })
+                .then(function (response) {
+                    if (response.ok) {
+                        return response.json();
+                    } else {
+                        throw 'Error en la llamada Ajax';
+                    }
+                })
+                .then(function (data) {
+                    if (!data.status) {
+                        switch (data.code) {
+                            case 'ok':
+                                alert(data.msg);
+                                break;
+                            case 'ko':
+                                alert(data.msg);
+                                break;
+                            default:
+                                break;
+                        }
+                    } else {
+                        //form.submit();
+                        console.log('Send form');
+                    }
+                })
+                .catch(function (error) {
+                    console.log('Catch error: ' + error);
+                });
+        });
+    </script>
+</body>
+
 </html>

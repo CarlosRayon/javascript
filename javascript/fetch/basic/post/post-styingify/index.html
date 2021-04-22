@@ -46,7 +46,7 @@
     <script>
         const btnSsend = document.querySelector('#btn-send');
 
-        btnSsend.addEventListener('click', function(e) {
+        btnSsend.addEventListener('click', function (e) {
 
             const name = document.querySelector('#name').value
             const email = document.querySelector('#email').value
@@ -63,8 +63,9 @@
 
             fetch('script.php', {
                 method: 'post',
-                headers: { // Importante
-                    'Content-Type': 'application/json'
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
                 },
                 body: JSON.stringify(content)
 
