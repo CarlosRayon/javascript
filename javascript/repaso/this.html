@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>funciones</title>
+    <title>Function and this</title>
 </head>
 
 <body>
@@ -14,8 +14,8 @@
 
     <br>
 
-    <button id="normal">Pulsame (normal)</button>
-    <button id="flecha">Pulsame (Flecha)</button>
+    <button id="normal">Press me (Normal function)</button>
+    <button id="arrow">Press me (Arrow function)</button>
 
     <script>
 
@@ -27,7 +27,7 @@
         testThis();
 
         const testThisArrow = () => console.log('arrow function', this);
-        testThis();
+        testThisArrow();
 
         const objectThis = {
             testThis: function () {
@@ -43,10 +43,9 @@
             console.log('Event with normal function', this)
         })
 
-        document.querySelector('#flecha').addEventListener('click', () => {
+        document.querySelector('#arrow').addEventListener('click', () => {
             console.log('Event with arrow function', this)
         })
-
 
     </script>
 </body>
